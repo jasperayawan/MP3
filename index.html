@@ -46,22 +46,28 @@
                     <h1 class="title text-center text-white">Bayangan Hotel and Beach Resort</h1>
                     <div class="CheckAvailability d-flex flex-md-row justify-content-center align-items-center gap-3 rounded-2 p-3 py-4">
                         <form action="" method="post">
-                            <div class="d-flex flex-row justify-content-center align-items-center gap-4">
-                                <div>
-                                    <label>check in</label>
+                            <h2 class="fs-5">Check Booking Availability</h2>
+                            <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-4">
+                                
+                                <div class="d-flex flex-column">
+                                    <label class="form-label fw-semibold">check in</label>
                                     <input type="date" name="date" class="rounded-2 px-2 py-1 border-0">
                                 </div>
-                                <div>
-                                    <label>check out</label>
-                                    <input type="date" name="date" class="rounded-2 px-2 py-1 border-0">
+                                <div class="d-flex flex-column fw-semibold">
+                                    <label class="form-label">check out</label>
+                                    <input type="date" name="date" class="form-control rounded-2 px-2 py-1 border-0">
                                 </div>
                                 <div>
-                                    <select>
-                                        <option>user type</option>
-                                        <option>Adults</option>
-                                        <option>Child</option>
-                                        <option>Pets</option>
+                                    <label class="form-label fw-semibold">user type</label>
+                                    <select class="form-select">
+                                        <option selected>Open this select menu</option>
+                                        <option value="1">Adults</option>
+                                        <option value="2">Child</option>
+                                        <option value="3">Pets</option>
                                     </select>
+                                </div>
+                                <div>
+                                    <button type="submit" class="btn btn__book text-white">Book now</button>
                                 </div>
                             </div>
                         </form>
@@ -126,6 +132,7 @@
             </div>
         </section>
 
+        <!---carousel-->
         <section class="ourGuest">
             <div class="container swiper swiper-container">
                 <div class="swiper-wrapper ourGuest__content ">
