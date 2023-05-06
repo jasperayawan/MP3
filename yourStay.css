@@ -17,3 +17,42 @@
 .btn__book{
     background: var(--blue-bg);
 }
+
+/*---------------------hero styling------------------*/
+
+.heroStay{
+    background-image: url('./assets/hero_sec.jpg');
+}
+.heroStay_content{
+    min-height: 100vh;
+}
+
+/*--------------------- roomCollection styling------------*/
+
+.roomCollection{
+    background: var(--pink-bg);
+}
+.roomCollection_content h1{
+    color: var(--blue-bg);
+}
+.btn_viewDetails{
+    background: var(--orange);
+    color: var(--pink-bg);
+}
+.room{
+    color: var(--blue-bg);
+}
+
+
+/*--------------------- ourGuestSay styling------------*/
+
+.ourGuestSay{
+    background: var(--blue-bg);
+    color: var(--pink-bg);
+}
+.ourGuestSay_content{
+    min-height: 100vh;
+}
+.userProfile table h2{
+    font-size: 20px;
+}
