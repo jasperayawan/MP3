@@ -84,3 +84,65 @@
     height: 80vh;
     color: var(--blue-bg);
 }
+
+/*-------------rooms styling---------------*/
+
+.rooms{
+    background: linear-gradient(to right,white,transparent),url('./assets/Confortroom.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.rooms-content{
+    min-height: 100vh;
+    color: var(--blue-bg);
+}
+.rooms-content .title{
+    border-left: 6px solid var(--orange);
+    padding-left: .6rem;
+}
+.btn_view{
+    background: var(--orange);
+    color: var(--pink-bg);
+}
+
+/*----------------weddings styling---------------*/
+
+.weddings__content{
+
+}
+.weddings__content .left_content{
+    background-image:url('./assets/wedding.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    width: 100%;
+}
+.weddings__content .right_content{
+    background-image: url('./assets/events.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    width: 100%;
+    color: var(--pink-bg);
+}
+.view_details{
+    background: var(--orange);
+    color: var(--pink-bg);
+}
+
+
+/*--------------------------location styling----------------*/
+
+.location{
+    background: var(--pink-bg);
+}
+.location_content{
+    min-height: 100vh;
+}
+.btn__explore{
+    background: var(--orange);
+    color: var(--pink-bg);
+}
