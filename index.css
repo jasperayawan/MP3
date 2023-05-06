@@ -146,3 +146,56 @@
     background: var(--orange);
     color: var(--pink-bg);
 }
+
+/*--------------gallery styling----------------*/
+
+.gallery__content{
+    display: grid;
+    color: var(--blue-bg);
+}
+.btn__seemore{
+    background: var(--orange);
+    color: var(--pink-bg);
+}
+
+/*----------------footer styling----------------*/
+
+.left_content{
+    background: var(--pink-bg);
+    min-height: 50vh;
+}
+.right_content{
+    background: var(--blue-bg);
+    min-height: 50vh;
+}
+.footer_content{
+    color: var(--blue-bg);
+}
+.footer_content .foot p{
+    font-size: 11px;
+}
+.footer .plan_footer{
+    border-left: 6px solid var(--orange);
+    padding-left: .6rem;
+}
+.footer .hotel_footer{
+    border-left: 6px solid var(--orange);
+    padding-left: .6rem;
+}
+.plan li a{
+    color: var(--pink-bg);
+}
+.btn_subscribe{
+    background: var(--orange);
+    color: var(--pink-bg);
+}
+.hotelReserve{
+    color: var(--pink-bg);
+}
+.subscribe input{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.subscribing-info{
+    color: #a3a1a1;
+}
