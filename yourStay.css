@@ -42,6 +42,10 @@
 .room{
     color: var(--blue-bg);
 }
+.roomCollection_content .title{
+    border-left: 6px solid var(--orange);
+    padding-left: .6rem;
+}
 
 
 /*--------------------- ourGuestSay styling------------*/
@@ -55,4 +59,64 @@
 }
 .userProfile table h2{
     font-size: 20px;
+}
+
+
+/*---------------------  roomOffers styling------------*/
+
+.roomOffers_content{
+    min-height: 100vh;
+}
+.roomOffers_content .btn_bookNowOffers{
+    border: 1px solid var(--orange);
+}
+.offersCard{
+    background: #F0F6F9;
+    color: var(--blue-bg);
+}
+.roomOffers_content h1{
+    border-left: 6px solid var(--orange);
+    padding-left: .6rem;
+}
+
+/*-----------------footer styling-----------------*/
+
+.left_content{
+    background: var(--pink-bg);
+    min-height: 50vh;
+}
+.right_content{
+    background: var(--blue-bg);
+    min-height: 50vh;
+}
+.footer_content{
+    color: var(--blue-bg);
+}
+.footer_content .foot p{
+    font-size: 11px;
+}
+.footer .plan_footer{
+    border-left: 6px solid var(--orange);
+    padding-left: .6rem;
+}
+.footer .hotel_footer{
+    border-left: 6px solid var(--orange);
+    padding-left: .6rem;
+}
+.plan li a{
+    color: var(--pink-bg);
+}
+.btn_subscribe{
+    background: var(--orange);
+    color: var(--pink-bg);
+}
+.hotelReserve{
+    color: var(--pink-bg);
+}
+.subscribe input{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.subscribing-info{
+    color: #a3a1a1;
 }
