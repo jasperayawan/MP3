@@ -8,6 +8,7 @@
     --pink-bg: #FEFAE0;
     --blue-bg: #1A5F7A;
     --orange: #E38B29;
+    --white: #fff;
 }
 .navbar{
     background: var(--pink-bg);
@@ -29,6 +30,13 @@
     min-height: 100vh;
     width: 100%;
     height: 100%;
+}
+.CheckAvailability{
+    background: var(--white);
+}
+.CheckAvailability form input{
+    background: #e9e8e8;
+    border: none;
 }
 
 /*------------------- experience styling---------------------*/

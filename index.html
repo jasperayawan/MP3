@@ -35,9 +35,30 @@
     <main>
         <section class="hero">
             <div class="container">
-                <div class="hero-content w-100 h-100 d-flex justify-content-center align-items-center">
+                <div class="hero-content w-100 h-100 d-flex gap-5 flex-column justify-content-center align-items-center">
                     <h1 class="title text-center text-white">Bayangan Hotel and Beach Resort</h1>
-                    
+                    <div class="CheckAvailability d-flex flex-md-row justify-content-center align-items-center gap-3 rounded-2 p-3 py-4">
+                        <form action="" method="post">
+                            <div class="d-flex flex-row justify-content-center align-items-center gap-4">
+                                <div>
+                                    <label>check in</label>
+                                    <input type="date" name="date" class="rounded-2 px-2 py-1 border-0">
+                                </div>
+                                <div>
+                                    <label>check out</label>
+                                    <input type="date" name="date" class="rounded-2 px-2 py-1 border-0">
+                                </div>
+                                <div>
+                                    <select>
+                                        <option>user type</option>
+                                        <option>Adults</option>
+                                        <option>Child</option>
+                                        <option>Pets</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
@@ -74,7 +95,7 @@
 
         <section class="featured">
             <div class="container">
-                <div class="d-flex flex-row featured-content p-0">
+                <div class="d-flex flex-column gap-3 flex-md-row featured-content p-0">
                     <div class="col d-flex justify-content-center align-items-center left-content position-relative overflow-hidden d-flex">
                         <img src="./assets/capcake.jpg" alt="" class="w-full h-full object-cover">
                     </div>
@@ -192,7 +213,7 @@
         <section class="footer relative overflow-hidden">
             <div class="footer_content">
                 <div class="row d-flex flex-wrap">
-                    <div class="col-lg-4 left_content">
+                    <div class="col-12 col-lg-4 left_content">
                         <div class="p-5 d-flex flex-column gap-3 text-center justify-content-center align-items-center">
                             <div class="logo">bayangan</div>
                             <h1>Bayangan Hotel and Beach Resort</h1>
@@ -206,8 +227,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-8 p-0">
-                        <div class="row container h-100 right_content py-5">
+                    <div class="col-12 col-lg-8 p-0">
+                        <div class="row d-flex flex-column flex-md-row container h-100 right_content py-5">
                             <div class="col d-flex justify-content-center align-items-center h-100">
                                 <ul class="list-unstyled plan d-flex justify-content-center flex-column gap-2">
                                     <h2 class="plan_footer text-white">Plan your visit</h2>
