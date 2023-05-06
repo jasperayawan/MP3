@@ -124,8 +124,13 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 100vh;
+    height: 100vh;
     width: 100%;
+}
+.overlay{
+    width: 100%;
+    height: 100vh;
+    background: rgba(26, 95, 122, 0.6);
 }
 .weddings__content .right_content{
     background-image: url('./assets/events.jpg');
