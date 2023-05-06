@@ -22,6 +22,9 @@
 
 .heroStay{
     background-image: url('./assets/hero_sec.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .heroStay_content{
     min-height: 100vh;
