@@ -138,6 +138,7 @@
 
 .location{
     background: var(--pink-bg);
+    color: var(--blue-bg);
 }
 .location_content{
     min-height: 100vh;
