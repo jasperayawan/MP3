@@ -92,6 +92,15 @@
     height: 80vh;
     color: var(--blue-bg);
 }
+.slide-1{
+    background: var(--pink-bg);
+}
+.slide-2{
+    background: var(--pink-bg);
+}
+.slide-3{
+    background: var(--pink-bg);
+}
 
 /*-------------rooms styling---------------*/
 
