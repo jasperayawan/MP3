@@ -18,14 +18,68 @@
     background: var(--blue-bg);
 }
 
-.zamboangaTravel{
-    background-image: url('./assets/hero_sec.jpg');
+/*---------------------hero styling------------------*/
+
+.heroStay{
+    background-image: url('../assets/hero_sec.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
-.zamboangaTravel_content{
+.heroStay_content{
     min-height: 100vh;
+}
+
+/*--------------------- roomCollection styling------------*/
+
+.roomCollection{
+    background: var(--pink-bg);
+}
+.roomCollection_content h1{
+    color: var(--blue-bg);
+}
+.btn_viewDetails{
+    background: var(--orange);
+    color: var(--pink-bg);
+}
+.room{
+    color: var(--blue-bg);
+}
+.roomCollection_content .title{
+    border-left: 6px solid var(--orange);
+    padding-left: .6rem;
+}
+
+
+/*--------------------- ourGuestSay styling------------*/
+
+.ourGuestSay{
+    background: var(--blue-bg);
+    color: var(--pink-bg);
+}
+.ourGuestSay_content{
+    min-height: 100vh;
+}
+.userProfile table h2{
+    font-size: 20px;
+}
+
+
+/*---------------------  roomOffers styling------------*/
+
+.roomOffers_content{
+    min-height: 100vh;
+}
+.roomOffers_content .btn_bookNowOffers{
+    border: 1px solid var(--orange);
+}
+.offersCard{
+    background: #F0F6F9;
+    color: var(--blue-bg);
+}
+.roomOffers_content h1{
+    border-left: 6px solid var(--orange);
+    padding-left: .6rem;
 }
 
 /*-----------------footer styling-----------------*/
@@ -69,4 +123,3 @@
 .subscribing-info{
     color: #a3a1a1;
 }
-

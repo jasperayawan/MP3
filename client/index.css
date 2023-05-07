@@ -21,7 +21,7 @@
 /*-------------------- hero styling-------------------*/
 
 .hero{
-    background: linear-gradient(to bottom,#1A5F7A,transparent),url('./assets/hero_sec.jpg');
+    background: linear-gradient(to bottom,#1A5F7A,transparent),url('../assets/hero_sec.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -129,7 +129,7 @@
 
 }
 .weddings__content .left_content{
-    background-image:url('./assets/wedding.jpg');
+    background-image:url('../assets/wedding.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -142,7 +142,7 @@
     background: rgba(26, 95, 122, 0.6);
 }
 .weddings__content .right_content{
-    background-image: url('./assets/events.jpg');
+    background-image: url('../assets/events.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
