@@ -129,9 +129,6 @@
 
 /*----------------weddings styling---------------*/
 
-.weddings__content{
-
-}
 .weddings__content .left_content{
     background-image:url('../assets/wedding.jpg');
     background-position: center;
@@ -227,8 +224,26 @@
     color: #a3a1a1;
 }
 
-@media (max-width:600px){
-    .login_buttons{
-        width: 100%;
+
+
+
+
+@media (min-width: 991px){
+    /* location styling */
+    .btn__explore{
+        width: 200px;
     }
+    .location_content p{
+        width: 50%;
+    }
+
+    /* room styling */
+    .rooms-content p{
+        width: 50%;
+    }
+    .btn_view{
+        width: 200px;
+    }
+    
 }
+
