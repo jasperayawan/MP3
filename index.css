@@ -21,7 +21,7 @@
 /*-------------------- hero styling-------------------*/
 
 .hero{
-    background-image: url('./assets/hero_sec.jpg');
+    background: linear-gradient(to bottom,#1A5F7A,transparent),url('./assets/hero_sec.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
