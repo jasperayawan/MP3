@@ -17,11 +17,15 @@
 .btn__book{
     background: var(--blue-bg);
 }
+.btn__book_signup{
+    border: 1px solid var(--blue-bg);
+    color: var(--blue-bg);
+}
 
 /*---------------------hero styling------------------*/
 
 .heroStay{
-    background-image: url('../assets/hero_sec.jpg');
+    background: linear-gradient(to bottom,#1A5F7A,transparent),url('../assets/hero_sec.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -41,6 +45,12 @@
 .btn_viewDetails{
     background: var(--orange);
     color: var(--pink-bg);
+    font-size: 11px;
+}
+.btn_book{
+    border: 1px solid var(--orange);
+    color: var(--orange);
+    font-size: 11px;
 }
 .room{
     color: var(--blue-bg);
@@ -75,6 +85,7 @@
 }
 .roomOffers_content .btn_bookNowOffers{
     border: 1px solid var(--orange);
+    color: var(--orange);
 }
 .offersCard{
     background: #F0F6F9;
@@ -125,4 +136,13 @@
 }
 .subscribing-info{
     color: #a3a1a1;
+}
+
+@media (max-width: 600px){
+    .rooms img{
+        width: 100%;
+    }
+    .buttons{
+        display: flex;
+    }
 }
