@@ -45,6 +45,9 @@
 .room{
     color: var(--blue-bg);
 }
+.room img{
+    height: 200px;
+}
 .roomCollection_content .title{
     border-left: 6px solid var(--orange);
     padding-left: .6rem;
