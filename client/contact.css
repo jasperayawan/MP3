@@ -8,6 +8,7 @@
     --pink-bg: #FEFAE0;
     --blue-bg: #1A5F7A;
     --orange: #E38B29;
+    --white: #fff;
 }
 
 .navbar{
@@ -75,7 +76,7 @@
     position: relative;
     width: 100%;
     padding: 80px 100px;
-    background: linear-gradient(90deg,orange 0%,orange 30%,blue 0%,blue 100%);
+    background: var(--white);
 }
 .contactUs .title{
     display:flex;
@@ -109,14 +110,17 @@
 }
 .contact{
     padding: 40px;
-    background: white;
-    box-shadow: 0 5px 35px rgba(0,0,0,15);
+    background: var(--pink-bg);
+    box-shadow: 0 10px 0 2px rgba(0,0,0,0.1);
 }
 .contact h3{
     color: var(--blue-bg);
     font-weight: 500;
     font-size: 1.4em;
     margin-bottom: 10px;
+}
+.btn_contact{
+    background: var(--blue-bg);
 }
 .formbox{
     position: relative;
@@ -171,9 +175,12 @@
 .inputBox ::placeholder{
     color: gray;
 }
-/* info */
+
+/* -------------info------------- */
+
+
 .info{
-    background: orange;
+    background: var(--blue-bg);
 }
 .info h3{
     color: white;
