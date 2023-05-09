@@ -1,36 +1,36 @@
-// let list = document.querySelectorAll(".navigation_container li");
+let list = document.querySelectorAll(".navigation_container li");
 
-// function activeLink(){
-//     list.forEach(item => {
-//         item.classList.remove("hovered")
-//     })
-//     this.classList.add("hovered")
-// }
+function activeLink(){
+    list.forEach(item => {
+        item.classList.remove("hovered")
+    })
+    this.classList.add("hovered")
+}
 
-// list.forEach(item => item.addEventListener("mouseover", activeLink))
+list.forEach(item => item.addEventListener("mouseover", activeLink))
 
-// let toggle = document.querySelector('.toggle')
-// let navigation = document.querySelector('.navigation_container');
-// let main = document.querySelector('.main')
+let toggle = document.querySelector('.toggle')
+let navigation = document.querySelector('.navigation_container');
+let main = document.querySelector('.main')
 
-// toggle.onclick = function(){
-//     navigation.classList.toggle("active")
-//     main.classList.toggle("active")
-// }
+toggle.onclick = function(){
+    navigation.classList.toggle("active")
+    main.classList.toggle("active")
+}
 
-// const subMenu = document.querySelector('.sub-menu')
-// const navItem = document.querySelectorAll('.nav-item')
+const subMenu = document.querySelector('.sub-menu')
+const navItem = document.querySelectorAll('.nav-item')
 
-// for(let i of navItem){
-//     i.onclick = activeLi;
-// }
+for(let i of navItem){
+    i.onclick = activeLi;
+}
 
-// function activeLi(){
-//     const list = Array.from(navItem);
+function activeLi(){
+    const list = Array.from(navItem);
 
-//     list.forEach(e => e.classList.remove('actives'));
-//     this.classList.add('actives')
-// }
+    list.forEach(e => e.classList.remove('actives'));
+    this.classList.add('actives')
+}
 
 
 
