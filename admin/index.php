@@ -25,7 +25,6 @@
     <?php
         if(isset($_POST['login'])){ 
                 $frm_data = filteration($_POST);
-
                 $query = "SELECT * FROM `admin_user` WHERE `username`=? AND `password`=?";
                 $values = [$frm_data['admin_username'],$frm_data['admin_password']];
                 $res = select($query,$values,"ss");

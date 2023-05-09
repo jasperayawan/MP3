@@ -125,13 +125,6 @@ function contacts_inp(data)
     }
 }
 
-
-// function upd_contacts()
-// {
-//   let index = ['address','gmail','phone1','phone2','email','facebook','instagram','twitter','iframe'];
-//   let contacts_inp_id = ['address_inp','gmap_inp','phone1_inp','phone2_inp','email_inp','facebook_inp','instagram_inp','twitter_inp','iframe_inp']
-// }
-
 contacts_settings_form.addEventListener('submit', function(e){
     e.preventDefault();
     update_contacts();
