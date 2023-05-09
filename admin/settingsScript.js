@@ -5,6 +5,8 @@ let general_settings_form = document.getElementById('general_settings_form')
 let site_title_inp = document.getElementById('site_title_inp');
 let site_about_inp = document.getElementById('site_about_inp');
 
+let contacts_settings_form = document.getElementById('contacts_settings_form')
+
 function get_general()
 {
   let site_title = document.getElementById('site_title');
@@ -54,10 +56,8 @@ function update_general(site_title_val,site_about_val)
 
       var myModal = document.getElementById('general-settings');
       var modal = bootstrap.Modal.getInstance(myModal);
-
       modal.hide();
-      console.log(this.responseText);
-
+      
       if(this.responseText == 1)
       {
           alert('success','Changes saved');
@@ -123,6 +123,53 @@ function contacts_inp(data)
     {
         document.getElementById(contacts_inp_id[i]).value = data[i+1];
     }
+}
+
+
+// function upd_contacts()
+// {
+//   let index = ['address','gmail','phone1','phone2','email','facebook','instagram','twitter','iframe'];
+//   let contacts_inp_id = ['address_inp','gmap_inp','phone1_inp','phone2_inp','email_inp','facebook_inp','instagram_inp','twitter_inp','iframe_inp']
+// }
+
+contacts_settings_form.addEventListener('submit', function(e){
+    e.preventDefault();
+    update_contacts();
+})
+
+function update_contacts()
+{
+    let index = ['address','gmap','phone1','phone2','email','facebook','instagram','twitter','iframe'];
+    let contacts_inp_id = ['address_inp','gmap_inp','phone1_inp','phone2_inp','email_inp','facebook_inp','instagram_inp','twitter_inp','iframe_inp']
+
+    let data_str = "";
+
+    for(i = 0; i < index.length; i++)
+    {
+        data_str += index[i] + "=" + document.getElementById(contacts_inp_id[i]).value + '&';
+    }
+    data_str += "update_contacts";
+
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST","ajax/settings_crud.php",true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+
+    xhr.onload = function(){
+        var myModal = document.getElementById('contacts-settings');
+        var modal = bootstrap.Modal.getInstance(myModal);
+        modal.hide();
+        if(this.responseText == 1)
+        {
+            alert('success','Changes saved!');
+            get_contacts();
+        }
+        else{
+            alert('error', 'No changes made!')
+        }
+        get_general();
+    }
+
+    xhr.send(data_str);
 }
 
 window.onload = function(){

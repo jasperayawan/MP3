@@ -302,7 +302,7 @@
                                 </div>
                                 <div class="mb-3">
                                   <label class="form-label fw-semibold">Email</label>
-                                  <input type="email" name="eamil" id="email_inp" class="form-control shadow-none" required>
+                                  <input type="email" name="email" id="email_inp" class="form-control shadow-none" required>
                                 </div>
                               </div>
                               <div class="col-md-6">
