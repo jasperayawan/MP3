@@ -1,6 +1,6 @@
 <?php
     require('../admin/essentials.php');
-    require('../backend/db_config.php');
+    require('./db_config.php');
 
     session_start();
         if((isset($_SESSION['adminLogin']) && $_SESSION['adminLogin'] == true)){

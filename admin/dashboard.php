@@ -71,6 +71,16 @@
             </a>
           </li>
           <li class="position-relative w-100 nav-item">
+            <a href="./settings.php">
+              <span class="icon">
+                <ion-icon name="log-out-outline"></ion-icon>
+              </span>
+              <span class="title d-block position-relative text-start"
+                id="logout">Settings</span
+              >
+            </a>
+          </li>
+          <li class="position-relative w-100 nav-item">
             <a href="./logout.php">
               <span class="icon">
                 <ion-icon name="log-out-outline"></ion-icon>
