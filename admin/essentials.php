@@ -1,5 +1,12 @@
 <?php
 
+    //Frontend purpose data
+    //change this url once you deploy this system
+    define('SITE_URL','http://127.0.0.1/MP3/'); 
+    define('ABOUT_IMG_PATH',SITE_URL.'assets/about/');
+
+    //Backend upload process needs this data
+
     define('UPLOAD_IMAGE_PATH',$_SERVER['DOCUMENT_ROOT'].'/assets/');
     define('ABOUT_FOLDER','about/');
 
@@ -66,6 +73,16 @@
             else{
                 return 'upd_failed';
             }
+        }
+    }
+
+    function deleteImage($image,$folder)
+    {
+        if(unlink(UPLOAD_IMAGE_PATH.$folder.$image)){
+            return true;
+        }
+        else{
+            return false;
         }
     }
 ?>

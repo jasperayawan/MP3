@@ -203,6 +203,7 @@ function add_member()
       alert('success', 'New member added!');
       member_name_inp.value = '';
       member_picture_inp.value = '';  
+      get_members();
     }
 
   }
@@ -212,10 +213,44 @@ function add_member()
 
 function get_members()
 {
-  
+  let xhr = new XMLHttpRequest();
+  xhr.open("POST","ajax/settings_crud.php",true);
+  xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+
+  xhr.onload = function(){
+    document.getElementById('team-data').innerHTML = this.responseText;
+  }
+
+  xhr.send('get_members');
+}
+
+function rem_member(val)
+{
+  let xhr = new XMLHttpRequest();
+  xhr.open("POST","ajax/settings_crud.php",true);
+  xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+
+  xhr.onload = function(){
+    if(this.responseText == 1){
+      alertWithDelay('success','Member removed', 1000);
+      get_members();
+    }
+    else{
+      alertWithDelay('error','Server down!', 1000);
+    }
+  }
+
+  xhr.send('rem_member='+val);
+}
+
+function alertWithDelay(type, message, delay) {
+  setTimeout(function() {
+    alert(type, message);
+  }, delay);
 }
 
 window.onload = function(){
   get_general();
   get_contacts();
+  get_members();
 }
