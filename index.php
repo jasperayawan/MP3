@@ -1,3 +1,8 @@
+<?php
+    require('./admin/db_config.php');
+    require('./admin/essentials.php')
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -253,19 +258,43 @@
             </div>
         </section>
     </main>
+
+
+    <?php
+            $contact_query = "SELECT * FROM `contact_details` WHERE `id`=?";
+            $values = [1];
+            $contact_r = mysqli_fetch_assoc(select($contact_query,$values,'i'));
+
+            $settings_query = "SELECT * FROM `settings` WHERE `id`=?";
+            $values_s = [1];
+            $settings_r = mysqli_fetch_assoc(select($settings_query,$values_s,'i'));
+    ?>
     
     <footer>
+
         <section class="footer relative overflow-hidden">
             <div class="footer_content">
                 <div class="row d-flex flex-wrap">
                     <div class="col-12 col-lg-4 left_content">
                         <div class="p-5 d-flex flex-column gap-3 text-center justify-content-center align-items-center">
                             <div class="logo">bayangan</div>
-                            <h1>Bayangan Hotel and Beach Resort</h1>
+                            <?php
+                                if($settings_r['site_about'] != ''){
+                                    echo <<<data
+                                        <h1>$settings_r[site_about]</h1>
+                                    data;
+                                }
+                            ?>
                             <!-- <div class="social_links">
 
                             </div> -->
-                            <p>Lawagan Rd, Labason, Zamboanga del Norte</p>
+                            <?php
+                                if($contact_r['address'] != ''){
+                                    echo <<<data
+                                        <p>$contact_r[address]<p>
+                                    data;
+                                }
+                            ?>
 
                             <div class="foot">
                                 <p>C 2023 Bayangan Hotel and Beach Resort. All rights Reserved.</p>

@@ -394,7 +394,7 @@
                           </div>
                         </div>
                         <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="member_name.value='', member_picture.value=''">
                             Cancel
                           </button>
                           <button type="submit" class="btn btn-primary">
