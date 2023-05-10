@@ -7,6 +7,10 @@ let site_about_inp = document.getElementById('site_about_inp');
 
 let contacts_settings_form = document.getElementById('contacts_settings_form')
 
+let team_settings_form = document.getElementById('team_settings_form')
+let member_name_inp = document.getElementById('member_name_inp')
+let member_picture_inp = document.getElementById('member_picture_inp')
+
 function get_general()
 {
   let site_title = document.getElementById('site_title');
@@ -163,6 +167,52 @@ function update_contacts()
     }
 
     xhr.send(data_str);
+}
+
+team_settings_form.addEventListener('submit', function(e){
+  e.preventDefault();
+  add_member();
+});
+
+function add_member()
+{
+  let data = new FormData();
+  data.append('name',member_name_inp.value);
+  data.append('picture',member_picture_inp.files[0]);
+  data.append('add_member','');
+
+
+  let xhr = new XMLHttpRequest();
+  xhr.open("POST","ajax/settings_crud.php",true);
+
+  xhr.onload = function(){
+    var myModal = document.getElementById('team-settings');
+    var modal = bootstrap.Modal.getInstance(myModal);
+    modal.hide();
+    
+    if(this.responseText == 'inv_img'){
+      alert('error','Only JPG and PNG images are allowed!');
+    }
+    else if(this.responseText == 'inv_size'){
+      alert('error','Image should be less than 2MB!');
+    }
+    else if(this.responseText == 'upd_failed'){
+      alert('error','Image upload failed. Server down!');
+    }
+    else{
+      alert('success', 'New member added!');
+      member_name_inp.value = '';
+      member_picture_inp.value = '';  
+    }
+
+  }
+
+  xhr.send(data);
+}
+
+function get_members()
+{
+  
 }
 
 window.onload = function(){

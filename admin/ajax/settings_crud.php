@@ -52,4 +52,27 @@
         $res = update($query,$values,'sssssssssi');
         echo $res;
     }
+
+    if(isset($_POST['add_member']))
+    {
+        $form_data = filteration($_POST);
+
+        $img_r = uploadImage($_FILES['picture'],ABOUT_FOLDER);
+
+        if($img_r == 'inv_img'){
+            echo $img_r;
+        }
+        else if($img_r == 'inv_size'){
+            echo $img_r;
+        }
+        else if($img_r == 'upd_failed'){
+            echo $img_r;
+        }
+        else{
+            $query = "INSERT INTO `team_details`(`name`, `picture`) VALUES (?,?)";
+            $values = [$form_data['name'],$img_r];
+            $res = insert($query,$values,'ss');
+            echo $res;
+        }
+    }
 ?>
