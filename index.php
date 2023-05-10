@@ -19,7 +19,7 @@
     <header class="position-relative">
         <nav class="navbar navbar-expand-lg shadow-sm position-fixed w-100 top-0 left-0 py-3">
             <div class="container">
-                <a href="index.html" class="logo">
+                <a href="index.php" class="logo">
                     <img src="./assets/Bayangan Hotel Logo.png" alt="" width="40" height="40">
                 </a>
 
@@ -33,11 +33,11 @@
 
                 <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
                     <ul class="navbar-nav ms-auto list-unstyled w-100 gap-2 d-flex justify-content-end align-items-center">
-                        <li class="nav-item"><a href="index.html" class="nav-link text-decoration-none text-secondary fw-semibold">Home</a></li>
-                        <li class="nav-item"><a href="./client/yourStay.html" class="nav-link text-decoration-none text-secondary fw-semibold">Your Stay</a></li>
-                        <li class="nav-item"><a href="./client/hotelAmeneties.html" class="nav-link text-decoration-none text-secondary fw-semibold">Hotel Ameneties</a></li>
-                        <li class="nav-item"><a href="./client/zambaongaTravel.html" class="nav-link text-decoration-none text-secondary fw-semibold">Visit</a></li>
-                        <li class="nav-item"><a href="./client/contact.html" class="nav-link text-decoration-none text-secondary fw-semibold">Contact us</a></li>
+                        <li class="nav-item"><a href="index.php" class="nav-link text-decoration-none text-secondary fw-semibold">Home</a></li>
+                        <li class="nav-item"><a href="./client/yourStay.php" class="nav-link text-decoration-none text-secondary fw-semibold">Your Stay</a></li>
+                        <li class="nav-item"><a href="./client/hotelAmeneties.php" class="nav-link text-decoration-none text-secondary fw-semibold">Hotel Ameneties</a></li>
+                        <li class="nav-item"><a href="./client/zambaongaTravel.php" class="nav-link text-decoration-none text-secondary fw-semibold">Visit</a></li>
+                        <li class="nav-item"><a href="./client/contact.php" class="nav-link text-decoration-none text-secondary fw-semibold">Contact us</a></li>
                         <div class="login_buttons d-flex flex-column  flex-lg-row gap-1 justify-content-end">
                             <button class="btn btn__book text-white">Login</button>
                             <button class="btn btn__book_signup">Sign up</button>
