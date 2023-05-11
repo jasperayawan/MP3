@@ -1,6 +1,43 @@
 <?php
     require('../admin/essentials.php');
+    require('../admin/db_config.php');
     adminLogin();
+
+    if(isset($_GET['seen']))
+    {
+        $form_data = filteration($_GET);
+
+        if($form_data['seen'] == 'all'){
+
+        }else{
+            $query = "UPDATE `user_queries` SET `seen`=? WHERE `id`=?";
+            $values = [1,$form_data['seen']];
+            if(update($query,$values,'ii')){
+                alert('success','Mark as read.');
+            }
+            else{
+                alert('error','failed');
+            }
+        }
+    }
+
+    if(isset($_GET['del']))
+    {
+        $form_data = filteration($_GET);
+
+        if($form_data['del'] == 'all'){
+
+        }else{
+            $query = "DELETE FROM `user_queries` WHERE `id`=?";
+            $values = [$form_data['del']];
+            if(delete($query,$values,'i')){
+                alert('success','Message deleted!');
+            }
+            else{
+                alert('error','failed');
+            }
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -29,6 +66,9 @@
   </head>
   <body>
     <div class="container_body position-relative w-100">
+
+    <!-----------navifation-------------->
+
       <div class="navigation_container position-fixed h-100">
         <ul class="position-absolute w-100 list-unstyled">
           <li class="position-relative w-100 nav-item">
@@ -52,7 +92,7 @@
             </a>
           </li>
           <li class="position-relative w-100 nav-item">
-            <a href="../admin/user.php">
+            <a href="adminUsers.html">
               <span class="icon">
                 <ion-icon name="people-outline"></ion-icon>
               </span>
@@ -98,6 +138,8 @@
         </ul>
       </div>
 
+    <!-------------main------------->
+
       <div class="main position-absolute">
         <div
           class="topbar d-flex w-100 justify-content-between align-items-center"
@@ -115,50 +157,7 @@
         </div>
 
         
-        <!----------cards------------>
-
-        <div class="cardBox">
-          <div class="card">
-            <div>
-              <div class="numbers">0</div>
-              <div class="cardName">Daily Views</div>
-            </div>
-
-            <div class="iconBx">
-              <ion-icon name="eye-outline"></ion-icon>
-            </div>
-          </div>
-          <div class="card">
-            <div>
-              <div class="numbers">0</div>
-              <div class="cardName">Booking</div>
-            </div>
-
-            <div class="iconBx">
-              <ion-icon name="cart-outline"></ion-icon>
-            </div>
-          </div>
-          <div class="card">
-            <div>
-              <div class="numbers">0</div>
-              <div class="cardName">Reviews</div>
-            </div>
-
-            <div class="iconBx">
-              <ion-icon name="chatbubble-outline"></ion-icon>
-            </div>
-          </div>
-          <div class="card">
-            <div>
-              <div class="numbers">Php 0</div>
-              <div class="cardName">Earning</div>
-            </div>
-
-            <div class="iconBx">
-              <ion-icon name="cash-outline"></ion-icon>
-            </div>
-          </div>
-        </div>
+    
 
         <!----------order details list------->
 
@@ -173,93 +172,50 @@
               <thead>
                 <tr>
                   <td class="fw-bold">id</td>
-                  <td class="fw-bold">Name</td>
-                  <td class="fw-bold">Location</td>
-                  <td class="fw-bold">User Type</td>
+                  <td class="fw-bold">First Name</td>
+                  <td class="fw-bold">Last Name</td>
+                  <td class="fw-bold">Email</td>
+                  <td class="fw-bold">Message</td>
+                  <td class="fw-bold">Seen</td>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Leonel</td>
-                  <td>Agartha</td>
-                  <td><span class="status Male">Male</span></td>
-                </tr>
+                <!-- 
                 <tr>
                   <td>2</td>
                   <td>Gabrielle</td>
                   <td>Agartha</td>
                   <td><span class="status Female">Female</span></td>
-                </tr>
+                </tr> -->
+                <?php
+                    $query = "SELECT * FROM `user_queries` ORDER BY `id` DESC";
+                    $data = mysqli_query($conn,$query);
+                    $i = 1;
+
+                    while($row = mysqli_fetch_assoc($data)){
+
+                        $seen = '';
+                        if($row['seen'] != 1){
+                            $seen = "<a href='?seen=$row[id]' class='btn btn-sm rounded-pill btn-primary'>Mark as read</a>";
+                        }
+                        $seen.="<a href='?del=$row[id]' class='btn btn-sm rounded-pill btn-danger'>Delete</a>";
+                        echo <<<query
+                            <tr>
+                                <td>$i</td>
+                                <td>$row[first_name]</td>
+                                <td>$row[last_name]</td>
+                                <td>$row[email]</td>
+                                <td>$row[message]</td>
+                                <td>$seen</td>
+                            </tr>
+                        query;
+                        $i++;
+                    }
+                ?>
               </tbody>
             </table>
           </div>
 
-          <!----------new customers------------->
-
-          <div class="recentCustomers">
-            <div class="cardHeader">
-              <h2>Recent Customers</h2>
-            </div>
-
-            <table>
-              <tr>
-                <td width="60px">
-                  <div class="imgBx">
-                    <img src="../assets/diving.jpg" alt="" />
-                  </div>
-                </td>
-                <td>
-                  <h4>
-                    jasper <br />
-                    <span>Pitogo</span>
-                  </h4>
-                </td>
-              </tr>
-
-              <tr>
-                <td width="60px">
-                  <div class="imgBx">
-                    <img src="../assets/diving.jpg" alt="" />
-                  </div>
-                </td>
-                <td>
-                  <h4>
-                    jasper <br />
-                    <span>Pitogo</span>
-                  </h4>
-                </td>
-              </tr>
-
-              <tr>
-                <td width="60px">
-                  <div class="imgBx">
-                    <img src="../assets/diving.jpg" alt="" />
-                  </div>
-                </td>
-                <td>
-                  <h4>
-                    jayson <br />
-                    <span>Pitogo</span>
-                  </h4>
-                </td>
-              </tr>
-
-              <tr>
-                <td width="60px">
-                  <div class="imgBx">
-                    <img src="../assets/diving.jpg" alt="" />
-                  </div>
-                </td>
-                <td>
-                  <h4>
-                    jasper <br />
-                    <span>Pitogo</span>
-                  </h4>
-                </td>
-              </tr>
-            </table>
-          </div>
         </div>
       </div>
     </div>

@@ -73,7 +73,7 @@
     min-height: 100vh;
     color: var(--blue-bg);
 }
-.resort_SPA .btn_bookNowOffers{
+.btn_bookNowOffers{
     background: var(--orange);
     color: var(--white);
 }
@@ -85,7 +85,7 @@
     border-left: 6px solid var(--orange);
     padding-left: .6rem;
 }
-.resort_SPA .title{
+.title{
     border-left: 6px solid var(--orange);
     padding-left: .6rem;
 }

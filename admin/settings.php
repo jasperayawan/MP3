@@ -52,7 +52,7 @@
             </a>
           </li>
           <li class="position-relative w-100 nav-item">
-            <a href="adminUsers.html">
+            <a href="../admin/user.php">
               <span class="icon">
                 <ion-icon name="people-outline"></ion-icon>
               </span>

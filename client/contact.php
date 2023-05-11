@@ -30,36 +30,36 @@
                 <!--Form-->
                 <div class="contact form">
                     <h3>Send a Message</h3>
-                    <form>
+                    <form method="POST">
                         <div class="formBox">
                             <div class="row50">
                                 <div class="inputBox">
-                                    <label>First Name</label>
-                                    <input type="text" placeholder="First Name">
+                                    <label class="form-label">First Name</label>
+                                    <input class="form-control" name="first_name" type="text" placeholder="First Name" required>
                                 </div>
                                 <div class="inputBox">
-                                    <label>Last Name</label>
-                                    <input type="text" placeholder="Last Name">
+                                    <label class="form-label">Last Name</label>
+                                    <input class="form-control" name="last_name" type="text" placeholder="Last Name" required>
                                 </div>
                             </div>
                             <div class="row50">
                                 <div class="inputBox">
-                                    <label>Email Address</label>
-                                    <input type="email" placeholder="Email Address">
+                                    <label class="form-label">Email Address</label>
+                                    <input class="form-control" name="email" type="email" placeholder="Email Address" required>
                                 </div>
                                 <div class="inputBox">
-                                    <label>Phone Number</label>
-                                    <input type="number" placeholder="Phone Number">
+                                    <label class="form-label">Phone Number</label>
+                                    <input class="form-control" name="phone_number" type="number" placeholder="Phone Number" required>
                                 </div>
                             </div>
                             <div class="row100">
                                 <div class="inputBox">
-                                    <label>Message</label>
-                                    <textarea placeholder="Write your message here..."></textarea>
+                                    <label class="form-label">Message</label>
+                                    <textarea name="message" placeholder="Write your message here..." required></textarea>
                                 </div>
                             </div>
                             <div>
-                                <button class="btn btn_contact text-white">Submit</button>
+                                <button name="send" type="submit" class="btn btn_contact text-white">Submit</button>
                             </div>
                         </div>
                     </form>
@@ -97,6 +97,23 @@
         </section>
     </content>
 
+    <?php
+        if(isset($_POST['send'])){
+            $form_data = filteration($_POST);
+
+            $query = "INSERT INTO `user_queries`(`first_name`, `last_name`, `email`, `phone_number`, `message`) VALUES (?,?,?,?,?)";
+            $values = [$form_data['first_name'],$form_data['last_name'],$form_data['email'],$form_data['phone_number'],$form_data['message']];
+            
+            $res = insert($query,$values,'sssss',);
+
+            if($res == 1){
+                alert('success','Mail sent!');
+            }
+            else{
+                alert('error', 'try again later.');
+            }
+        }
+    ?>
 
     <?php
         require('../components/footer.php')

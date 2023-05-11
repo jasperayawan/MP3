@@ -84,7 +84,7 @@
 .roomOffers_content{
     min-height: 100vh;
 }
-.roomOffers_content .btn_bookNowOffers{
+.btn_bookNowOffers{
     background: var(--orange);
     color: var(--white);
 }
