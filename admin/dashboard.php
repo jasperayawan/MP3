@@ -1,6 +1,58 @@
 <?php
+    require('../admin/db_config.php');
     require('../admin/essentials.php');
     adminLogin();
+
+    if(isset($_GET['seen']))
+    {
+        $form_data = filteration($_GET);
+
+        if($form_data['seen'] == 'all')
+        {
+            $query = "UPDATE `user_queries` SET `seen`=?";
+            $values = [1];
+            if(update($query,$values,'i')){
+                alert('success','Marked all as read.');
+            }
+            else{
+                alert('error','failed');
+            }
+        }
+         else {
+            $query = "UPDATE `user_queries` SET `seen`=? WHERE `id`=?";
+            $values = [1,$form_data['seen']];
+            if(update($query,$values,'ii')){
+                alert('success','Marked as read.');
+            }
+            else{
+                alert('error','failed');
+            }
+        }
+    }
+
+    if(isset($_GET['del']))
+    {
+        $form_data = filteration($_GET);
+
+        if($form_data['del'] == 'all'){
+          $query = "DELETE FROM `user_queries`";
+            if(mysqli_query($conn,$query)){
+                alert('success','All Message deleted!');
+            }
+            else{
+                alert('error','failed');
+            }
+        }else{
+            $query = "DELETE FROM `user_queries` WHERE `id`=?";
+            $values = [$form_data['del']];
+            if(delete($query,$values,'i')){
+                alert('success','Message deleted!');
+            }
+            else{
+                alert('error','failed');
+            }
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -179,18 +231,31 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Leonel</td>
-                  <td>Agartha</td>
-                  <td><span class="status Male">Male</span></td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Gabrielle</td>
-                  <td>Agartha</td>
-                  <td><span class="status Female">Female</span></td>
-                </tr>
+              <?php
+                    $query = "SELECT * FROM `user_queries` ORDER BY `id` DESC";
+                    $data = mysqli_query($conn,$query);
+                    $i = 1;
+
+                    while($row = mysqli_fetch_assoc($data)){
+
+                        $seen = '';
+                        if($row['seen'] != 1){
+                            $seen = "<a href='?seen=$row[id]' class='btn btn-sm rounded-pill btn-primary'>Mark as read</a>";
+                        }
+                        $seen.="<a href='?del=$row[id]' class='btn btn-sm rounded-pill btn-danger'>Delete</a>";
+                        echo <<<query
+                            <tr>
+                                <td>$i</td>
+                                <td>$row[first_name]</td>
+                                <td>$row[last_name]</td>
+                                <td>$row[email]</td>
+                                <td>$row[message]</td>
+                                <td>$seen</td>
+                            </tr>
+                        query;
+                        $i++;
+                    }
+                ?>
               </tbody>
             </table>
           </div>

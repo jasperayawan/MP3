@@ -31,14 +31,15 @@ require('../admin/essentials.php')
         </section>
 
         <section class="roomCollection py-4">
-            <div class="container py-lg-5">
+            <div class="container">
                 <div class="roomCollection_content">
                     <div class="title">
                         <h1>Room Collection</h1>
                     </div>
 
-                    <div class="row d-flex flex-column gap-4 room justify-content-center align-items-center">
-                        <div class="col rooms p-4 d-flex flex-column justify-content-between flex-lg-row position-relative gap-4 bg-light">
+                    <div class="row">
+
+                        <!-- <div class="col rooms p-4 d-flex flex-column justify-content-between flex-lg-row position-relative gap-4 bg-light">
                             <img src="../assets/Confortroom.jpg" alt="room 1" class="rounded-2 object-fit-cover">
                             <div class="d-flex flex-c gap-2">
                                 <div class="">
@@ -180,9 +181,73 @@ require('../admin/essentials.php')
                                     <button class="btn btn_viewDetails btn-sm w-100">details</button>
                                 </div>
                             </div>
+                        </div> -->
+
+                        <div class="d-flex flex-column gap-4">
+                        <div class="card mb-3">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="../assets/Confortroom.jpg" class="img-fluid rounded-start" alt="...">
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card-footer d-flex flex-column">
+                                        <p>From</p>
+                                        <p>Php 950.00</p>
+                                        <p>0.00/night</p>
+                                        <p>Only available with King Bed rate and availability are subject to changes.</p>
+                                        <a type="button" href="#" class="btn btn-primary border-0" style="background-color: #E38B29">
+                                            Select Room
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
+                        <div class="card mb-3">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="../assets/Confortroom.jpg" class="img-fluid rounded-start" alt="...">
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card-footer d-flex flex-column">
+                                        <p>From</p>
+                                        <p>Php 950.00</p>
+                                        <p>0.00/night</p>
+                                        <p>Only available with King Bed rate and availability are subject to changes.</p>
+                                        <a type="button" href="#" class="btn btn-primary border-0" style="background-color: #E38B29">
+                                            Select Room
+                                        </a>
+                                    </div>
+                                </div>
 
+                                <div class="col-md-4">
+                                    <div class="card-footer d-flex flex-column">
+                                        <p>From</p>
+                                        <p>Php 950.00</p>
+                                        <p>0.00/night</p>
+                                        <p>Only available with King Bed rate and availability are subject to changes.</p>
+                                        <a type="button" href="#" class="btn btn-primary border-0" style="background-color: #E38B29">
+                                            Select Room
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -245,59 +310,7 @@ require('../admin/essentials.php')
             </div>
         </section>
 
-        <!-- <section class=" py-4">
-            <div class="container">
-                <div class="roomOffers_content d-flex flex-column justify-content-center">
-                    <div class="title">
-                        <h1>Room offers</h1>
-                    </div>
-                    <div>
-                        <div class="row">
-                            <div class="col-md-6 col-lg-4">
-                                <div class="card">
-                                    <img src="../assets/Confortroom.jpg" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Offer 1</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <div class="d-flex justify-content-center align-items-center">
-                                            <a href="#" class="btn btn_bookNowOffers">Book now</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="col-md-6 col-lg-4">
-                                <div class="card">
-                                    <img src="../assets/Confortroom.jpg" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Offer 2</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <div class="d-flex justify-content-center">
-                                            <a href="#" class="btn btn_bookNowOffers">Book now</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6 col-lg-4">
-                                <div class="card">
-                                    <img src="../assets/Confortroom.jpg" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Offer 3</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <div class="d-flex justify-content-center">
-                                            <a href="#" class="btn btn_bookNowOffers">Book now</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
 
         <section class="roomOffers px-4">
             <div class="container-md py-4 py-md-5 px-lg-5">

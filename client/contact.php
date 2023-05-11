@@ -55,7 +55,7 @@
                             <div class="row100">
                                 <div class="inputBox">
                                     <label class="form-label">Message</label>
-                                    <textarea name="message" placeholder="Write your message here..." required></textarea>
+                                    <textarea class="form-control" name="message" placeholder="Write your message here..." required></textarea>
                                 </div>
                             </div>
                             <div>

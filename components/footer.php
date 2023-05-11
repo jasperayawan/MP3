@@ -17,7 +17,11 @@
                 <div class="row d-flex flex-wrap">
                     <div class="col-12 col-lg-4 left_content">
                         <div class="p-5 d-flex flex-column gap-3 text-center justify-content-center align-items-center">
-                            <div class="logo">bayangan</div>
+                            <div class="logo">
+                                <a href="/index.php" class="logo">
+                                    <img src="../assets/Bayangan Hotel Logo.png" alt="" width="40" height="40">
+                                </a>
+                            </div>
                             <?php
                                 if($settings_r['site_about'] != ''){
                                     echo <<<data

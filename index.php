@@ -16,10 +16,10 @@
     <link rel="stylesheet" href="./client/index.css">
 </head>
 <body>
+   
     <?php
         require('./components/header.php');
     ?>
-
     <!-- hero section --->
 
     <main>
