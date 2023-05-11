@@ -8,6 +8,7 @@
     --pink-bg: #FEFAE0;
     --blue-bg: #1A5F7A;
     --orange: #E38B29;
+    --white: #fff;
 }
 
 .navbar{
@@ -73,7 +74,8 @@
     color: var(--blue-bg);
 }
 .resort_SPA .btn_bookNowOffers{
-    border: 1px solid var(--orange);
+    background: var(--orange);
+    color: var(--white);
 }
 .offersCard{
     background: #F0F6F9;
