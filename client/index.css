@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Merriweather', serif;
 }
 
 :root{
@@ -9,6 +12,7 @@
     --blue-bg: #1A5F7A;
     --orange: #E38B29;
     --white: #fff;
+    --dirty-white: #FEFAE0;
 }
 .navbar{
     background: var(--pink-bg);
@@ -16,11 +20,17 @@
 }
 .btn__book{
     background: var(--blue-bg);
+    border-radius: 0 !important
 }
 .btn__book_signup{
     border: 1px solid var(--blue-bg);
     color: var(--blue-bg);
 }
+
+.btn__book:hover{
+    background:#E38B29 !important
+}
+
 
 /*-------------------- hero styling-------------------*/
 
