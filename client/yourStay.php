@@ -199,7 +199,7 @@ require('../admin/essentials.php')
                                 <div class="col-md-4">
                                     <div class="card-footer d-flex flex-column h-100 border-0" style="background-color: #E38B29; color: #fff">
                                         <p>From</p>
-                                        <p>Php 950.00</p>
+                                        <p style="text-decoration-line: line-through">Php 950.00</p>
                                         <p>0.00/night</p>
                                         <p>Only available with King Bed rate and availability are subject to changes.</p>
                                         <a type="button" href="#" class="btn btn-primary border-0" style="background-color: #1A5F7A">
@@ -225,7 +225,7 @@ require('../admin/essentials.php')
                                 <div class="col-md-4">
                                     <div class="card-footer d-flex flex-column h-100 border-0" style="background-color: #E38B29; color: #fff">
                                         <p>From</p>
-                                        <p>Php 950.00</p>
+                                        <p style="text-decoration-line: line-through">Php 950.00</p>
                                         <p>0.00/night</p>
                                         <p>Only available with King Bed rate and availability are subject to changes.</p>
                                         <a type="button" href="#" class="btn btn-primary border-0" style="background-color: #1A5F7A">
@@ -251,7 +251,7 @@ require('../admin/essentials.php')
                                 <div class="col-md-4">
                                     <div class="card-footer d-flex flex-column h-100 border-0" style="background-color: #E38B29; color: #fff">
                                         <p>From</p>
-                                        <p>Php 950.00</p>
+                                        <p style="text-decoration-line: line-through">Php 950.00</p>
                                         <p>0.00/night</p>
                                         <p>Only available with King Bed rate and availability are subject to changes.</p>
                                         <a type="button" href="#" class="btn btn-primary border-0" style="background-color: #1A5F7A">
