@@ -109,7 +109,7 @@
 /*-------------rooms styling---------------*/
 
 .rooms{
-    background: linear-gradient(to right,white,transparent),url('./assets/Confortroom.jpg');
+    background: linear-gradient(to right,white,transparent),url('../assets/Confortroom.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
