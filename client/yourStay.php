@@ -30,8 +30,8 @@ require('../admin/essentials.php')
             </div>
         </section>
 
-        <section class="roomCollection py-4">
-            <div class="container">
+        <section class="roomCollection py-md-5">
+            <div class="container py-md-5">
                 <div class="roomCollection_content">
                     <div class="title">
                         <h1>Room Collection</h1>
@@ -197,7 +197,7 @@ require('../admin/essentials.php')
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="card-footer d-flex flex-column">
+                                    <div class="card-footer d-flex flex-column h-100">
                                         <p>From</p>
                                         <p>Php 950.00</p>
                                         <p>0.00/night</p>
@@ -223,7 +223,7 @@ require('../admin/essentials.php')
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="card-footer d-flex flex-column">
+                                    <div class="card-footer d-flex flex-column h-100">
                                         <p>From</p>
                                         <p>Php 950.00</p>
                                         <p>0.00/night</p>
@@ -249,7 +249,7 @@ require('../admin/essentials.php')
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="card-footer d-flex flex-column">
+                                    <div class="card-footer d-flex flex-column h-100">
                                         <p>From</p>
                                         <p>Php 950.00</p>
                                         <p>0.00/night</p>
