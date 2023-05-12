@@ -38,7 +38,9 @@
 /*--------------------- roomCollection styling------------*/
 
 .roomCollection{
-    background: var(--pink-bg);
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
 }
 .roomCollection_content h1{
     color: var(--blue-bg);
@@ -81,6 +83,15 @@
 
 /*---------------------  roomOffers styling------------*/
 
+.roomOffers{
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 .roomOffers_content{
     min-height: 100vh;
 }

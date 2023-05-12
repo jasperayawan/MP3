@@ -73,7 +73,7 @@ require('../admin/essentials.php')
             </div>
         </div>
 
-    <section class="Resort px-4">
+    <!-- <section class="Resort px-4">
         <div class="container-md py-4 py-md-5 px-lg-5">
                 <div class="title_SPA">
                     <h1>Resort SPA</h1>
@@ -124,7 +124,60 @@ require('../admin/essentials.php')
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
+
+    <section class="relative px-4" style="max-width: 1000px; margin: 0 auto; ">
+            <div class="roomOffers py-4 py-md-5" style="display: flex; justify-content: center; align-items:center; flex-direction: column">
+                <div class="title_SPA w-100">
+                    <h1>Resort SPA</h1>
+                </div>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 w-100">
+
+                    <div class="col p-1">
+                        <div class="card h-100">
+                            <img src="../assets/Confortroom.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title title">Offer 1</h5>
+                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            </div>
+                            <div class="card-footer border-0 py-4" style="background-color: #E38B29; color: #fff">
+                                <div class="d-flex justify-content-center">
+                                    <a href="#" class="btn btn_bookNowOffers" style="background-color: #1A5F7A">Book now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col p-1">
+                        <div class="card h-100">
+                            <img src="../assets/Confortroom.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title title">Offer 2</h5>
+                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            </div>
+                            <div class="card-footer border-0 py-4" style="background-color: #E38B29; color: #fff">
+                                <div class="d-flex justify-content-center">
+                                    <a href="#" class="btn btn_bookNowOffers" style="background-color: #1A5F7A">Book now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col p-1">
+                        <div class="card h-100">
+                            <img src="../assets/Confortroom.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title title">Offer 3</h5>
+                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                            </div>
+                            <div class="card-footer border-0 py-4" style="background-color: #E38B29; color: #fff">
+                                <div class="d-flex justify-content-center">
+                                    <a href="#" class="btn btn_bookNowOffers" style="background-color: #1A5F7A">Book now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <?php
