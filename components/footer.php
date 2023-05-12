@@ -15,11 +15,11 @@
         <section class="footer relative overflow-hidden">
             <div class="footer_content">
                 <div class="row">
-                    <div class="col-lg-4 left_content">
+                    <div class="col-lg-4 left_content" style="padding: 5rem 0">
                         <div class="p-5 d-flex flex-column gap-3 text-center justify-content-center align-items-center">
                             <div class="logo">
                                 <a href="/index.php" class="logo">
-                                    <img src="../assets/Bayangan Hotel Logo.png" alt="" width="40" height="40">
+                                    <img src="../assets/Bayangan Hotel Logo.png" alt="" width="140" height="150">
                                 </a>
                             </div>
                             <?php
@@ -46,8 +46,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-12 col-lg-8 p-0 right_content">
-                        <div class="row d-flex flex-column flex-md-row container gap-4 gap-lg-0 py-5">
+                    <div class="col-md-12 col-lg-8 p-0 right_content" style="padding: 5rem 0">
+                        <div class="row d-flex flex-column flex-md-row container gap-4 gap-lg-0 py-5 h-100">
                             <div class="col d-flex justify-content-start px-5 h-100">
                                 <ul class="list-unstyled plan d-flex justify-content-center flex-column gap-2">
                                     <h2 class="plan_footer text-white">Plan your visit</h2>
@@ -61,22 +61,23 @@
                                     <li class="nav-item"><a href="#" class="nav-link">Privacy notice</a></li>
                                 </ul>
                             </div>
-                            <div class="col hotelReserve d-flex flex-column gap-3 px-5">
-                                <div>
+                            <div class="col hotelReserve d-flex justify-content-center align-items-start gap-4 flex-column px-5 h-100 ">
+                                <div class="d-flex flex-column gap-4">
                                     <ul class="list-unstyled">
                                         <h2 class="hotel_footer">Plan your visit</h2>
                                         <li class="nav-item"><a href="#" class="nav-link">1111-222-333</a></li>
                                         <li class="nav-item"><a href="#" class="nav-link">bayangan@example.com</a></li>
                                     </ul>
                                     <div class="subscribe input-group">
-                                        <input type="email" placeholder="email" id="email" name="email-footer" class="border-0 px-2">
+                                        <input type="email" placeholder="email" id="email" name="email-footer" class="form-control border-0 px-2">
                                         <button class="btn btn_subscribe">Subscribe</button>
                                     </div>
                                 </div>
-
-                                <p class="subscribing-info">*By subscribing, you agree to receive marketing email messages from Bayangan Hotel 
+                                <div>
+                                    <p class="subscribing-info">*By subscribing, you agree to receive marketing email messages from Bayangan Hotel 
                                     and Beach Resort at the email address provided. Unsubscribe at any time. View our 
                                     Privacy Policy and Terms of Services</p>
+                                </div>
                             </div>
                         </div>
                     </div>
