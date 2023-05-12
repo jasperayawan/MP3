@@ -41,7 +41,7 @@
                           </div>
                         
                         <div class="login_buttons d-flex flex-column  flex-lg-row gap-1 justify-content-end">
-                            <a class="btn btn__book text-white" href="/client/contact.php">CONTACT</a>
+                            <a class="btn btn__book text-white" href="/client/contact.php" style="background-color: #1A5F7A;">CONTACT</a>
                         </div>
                     </ul>
 
