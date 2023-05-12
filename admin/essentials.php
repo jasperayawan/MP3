@@ -4,11 +4,13 @@
     //change this url once you deploy this system
     define('SITE_URL','http://127.0.0.1/MP3/'); 
     define('ABOUT_IMG_PATH',SITE_URL.'assets/about/');
+    define('FEATURES_IMG_PATH',SITE_URL.'assets/features/');
 
     //Backend upload process needs this data
 
     define('UPLOAD_IMAGE_PATH',$_SERVER['DOCUMENT_ROOT'].'/assets/');
     define('ABOUT_FOLDER','about/');
+    define('FEATURES_FOLDER','features/');
 
     function adminLogin(){
         session_start();
@@ -83,6 +85,35 @@
         }
         else{
             return false;
+        }
+    }
+
+    function uploadSVGImage($image, $folder)
+    {
+        $valid_mime = ['image/svg+xml'];
+        $img_mime = $image['type'];
+
+        if(!in_array($img_mime,$valid_mime)){
+
+            //invalid image mime or format
+            return 'inv_img';
+        }
+        else if(($image['size'] / (1024 * 1024))>1){
+            
+            //invalid size greater than 1mb
+            return 'inv_size';
+        }
+        else{
+            $extention = pathinfo($image['name'],PATHINFO_EXTENSION);
+            $randomName = 'IMG_'.random_int(11111,99999).".$extention";
+
+            $img_path = UPLOAD_IMAGE_PATH.$folder.$randomName;
+            if(move_uploaded_file($image['tmp_name'],$img_path)){
+                return $randomName;
+            }
+            else{
+                return 'upd_failed';
+            }
         }
     }
 ?>
