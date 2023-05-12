@@ -19,7 +19,7 @@
             <div class="container">
 
                 <a href="/index.php" class="logo">
-                    <img src="../assets/Bayangan Hotel Logo.png" alt="" width="40" height="40">
+                    <img src="../assets/Bayangan Hotel Logo.png" alt="" width="40" height="45">
                 </a>
                 <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-text-right" viewBox="0 0 16 16">

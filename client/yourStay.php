@@ -261,6 +261,84 @@ require('../admin/essentials.php')
                                 </div>
                             </div>
                         </div>
+
+                        <div class="card mb-3">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="../assets/Confortroom.jpg" class="img-fluid rounded-start h-100" alt="...">
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card-footer d-flex flex-column h-100 border-0" style="background-color: #E38B29; color: #fff">
+                                        <p>From</p>
+                                        <p style="text-decoration-line: line-through">Php 950.00</p>
+                                        <p>0.00/night</p>
+                                        <p>Only available with King Bed rate and availability are subject to changes.</p>
+                                        <a type="button" href="#" class="btn btn-primary border-0" style="background-color: #1A5F7A">
+                                            Select Room
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card mb-3">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="../assets/Confortroom.jpg" class="img-fluid rounded-start h-100" alt="...">
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card-footer d-flex flex-column h-100 border-0" style="background-color: #E38B29; color: #fff">
+                                        <p>From</p>
+                                        <p style="text-decoration-line: line-through">Php 950.00</p>
+                                        <p>0.00/night</p>
+                                        <p>Only available with King Bed rate and availability are subject to changes.</p>
+                                        <a type="button" href="#" class="btn btn-primary border-0" style="background-color: #1A5F7A">
+                                            Select Room
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card mb-3">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="../assets/Confortroom.jpg" class="img-fluid rounded-start h-100" alt="...">
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card-footer d-flex flex-column h-100 border-0" style="background-color: #E38B29; color: #fff">
+                                        <p>From</p>
+                                        <p style="text-decoration-line: line-through">Php 950.00</p>
+                                        <p>0.00/night</p>
+                                        <p>Only available with King Bed rate and availability are subject to changes.</p>
+                                        <a type="button" href="#" class="btn btn-primary border-0" style="background-color: #1A5F7A">
+                                            Select Room
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         </div>
                     </div>
                 </div>
