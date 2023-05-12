@@ -107,12 +107,12 @@
             </a>
           </li>
           <li class="position-relative w-100 nav-item">
-            <a href="adminUsers.html">
+            <a href="../admin/queries.php">
               <span class="icon">
                 <ion-icon name="people-outline"></ion-icon>
               </span>
               <span class="title d-block position-relative text-start"
-                >Users</span
+                >Queries</span
               >
           </li>
           <li class="position-relative w-100 nav-item">
