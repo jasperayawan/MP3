@@ -187,7 +187,7 @@ require('../admin/essentials.php')
                         <div class="card mb-3">
                             <div class="row g-0">
                                 <div class="col-md-4">
-                                    <img src="../assets/Confortroom.jpg" class="img-fluid rounded-start h-100" alt="...">
+                                    <img src="../assets/DR_2.jpg" class="img-fluid rounded-start" alt="...">
                                 </div>
                                 <div class="col-md-4">
                                     <div class="card-body">
