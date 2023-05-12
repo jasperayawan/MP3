@@ -46,13 +46,20 @@
     height: 100%;
 }
 .CheckAvailability{
-    background: var(--white);
+    background: var(--dirty-white);
+    border: 3px solid #E38B29;
+    border-radius:0;
+    height:150px;
+
 }
 .CheckAvailability form input{
     background: #e9e8e8;
     border: none;
 }
 
+.landing__logo{
+    margin-top:150px;
+}
 /*------------------- experience styling---------------------*/
 
 .experience{
