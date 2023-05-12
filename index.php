@@ -86,8 +86,7 @@
                 </div>
             </div>    
         </section>
-
-        <section class="visit position-relative">
+        <!--  <section class="visit position-relative">
             <div class="">
                 <div class="visit-content d-flex flex-column flex-lg-row">
                     <div class="col left-content d-flex flex-column justify-content-center align-items-center gap-5">
@@ -129,6 +128,20 @@
                     </div>
                 </div>
             </div>
+        </section>-->
+        <section class="rooms">
+            <div class="container">
+                <div class="rooms-content d-flex flex-column justify-content-center gap-4">
+                    <div class="title col-lg-3">
+                        <h3>Rooms and villas</h3>
+                        <h1>Comfort away from home</h1>
+                    </div>
+                    <div class="col-lg-8">
+                        <p class="text-center text-lg-start">Indulge yourself and relax in the comfiest rooms by the sea. Breathe deep with the crisp sea breeze as you enjoy unparalleled views of sunrise and sunsets.</p>
+                    </div>
+                    <button class="btn btn_view rounded-0">BOOK ROOMS</button>
+                </div>
+            </div>
         </section>
 
         <!---carousel-->
@@ -161,40 +174,21 @@
             </div>
         </section>
 
-        <section class="rooms">
-            <div class="container">
-                <div class="rooms-content d-flex flex-column justify-content-center gap-4">
-                    <div class="title">
-                        <h3>Rooms and villas</h3>
-                        <h1>Comfort away from home</h1>
-                    </div>
-                    <div class="">
-                        <p class="text-center text-lg-start">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste ea non labore
-                             quaerat a quis, veniam repellat! Minima, fugiat consectetur quisquam voluptates
-                              molestias placeat molestiae non deserunt sint beatae eos possimus. Doloremque
-                               quo maxime perferendis at. Earum libero ducimus voluptatem!</p>
-                    </div>
-                    <button class="btn btn_view">view our rooms</button>
-                </div>
-            </div>
-        </section>
-
         <section class="weddings">
             <div>
                 <div class="weddings__content d-flex flex-column flex-lg-row justify-content-center align-items-center">
                     <div class="col p-0 left_content">
-                        <div class="overlay d-flex justify-content-center align-items-center">
+                        <div class="overlay d-flex flex-column justify-content-center text-center align-items-center gap-4">
                             <h1 class="text-white">Weddings</h1>
+                            <p class="w-75" style="color:white">Plan a sophisticated and memorable weddings both indoors and outdoors, offering spectacular views of the ocean, beaches, and landscapes of Labason, Zamboanga del Norte. Bayanagan Hotel and Beach Resort is a one-of-a-kind destination for your special day.</p>
+                            <button class="btn view_details rounded-0">VIEW DETAILS</button>
                         </div>
                     </div>
                     <div class="col right_content">
                         <div class="overlay d-flex flex-column justify-content-center text-center align-items-center gap-4">
                             <h1>Events</h1>
-                            <p class="w-75">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum iusto totam
-                                vitae commodi earum a in pariatur nihil perferendis ullam. Aspernatur asperiores 
-                                doloribus iusto sed ut architecto quis totam non minima. Praesentium, nobis?
-                                Itaque eum nemo quaerat rerum voluptas reprehenderit!</p>
-                            <button class="btn view_details">view details</button>
+                            <p class="w-75">Ideal for your groups and events, Bayangan Hotel and Beach Resort features a professional function room with ocean views and has a beautiful patio on the beach.</p>
+                            <button class="btn view_details rounded-0">VIEW DETAILS</button>
                         </div>
                     </div>
                 </div>
@@ -214,7 +208,7 @@
                               laborum unde atque excepturi maxime. Laboriosam, illum quia culpa quasi 
                               doloremque iusto aperiam placeat omnis, obcaecati quae, fuga labore rem veniam?</p>
                     </div>
-                    <button class="btn btn__explore">Explore</button>
+                    <button class="btn btn__explore rounded-0">Explore</button>
                 </div>
             </div>
         </section>
@@ -229,7 +223,7 @@
                         <div class="d-flex flex-column justify-content-center align-items-center">
                             <div class="title">Gallery</div>
                             <h1>Catch a Glimpse</h1>
-                            <button class="btn btn__seemore">see more</button>
+                            <button class="btn btn__seemore rounded-0">SEE MORE</button>
                         </div>
                     </div>
                     <div class="col-6 col-md overflow-hidden p-0 ">
