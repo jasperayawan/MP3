@@ -3,48 +3,6 @@ require('../admin/essentials.php');
 require('../admin/db_config.php');
 adminLogin();
 
-if (isset($_GET['seen'])) {
-    $form_data = filteration($_GET);
-
-    if ($form_data['seen'] == 'all') {
-        $query = "UPDATE `user_queries` SET `seen`=?";
-        $values = [1];
-        if (update($query, $values, 'i')) {
-            alert('success', 'Marked all as read.');
-        } else {
-            alert('error', 'failed');
-        }
-    } else {
-        $query = "UPDATE `user_queries` SET `seen`=? WHERE `id`=?";
-        $values = [1, $form_data['seen']];
-        if (update($query, $values, 'ii')) {
-            alert('success', 'Marked as read.');
-        } else {
-            alert('error', 'failed');
-        }
-    }
-}
-
-if (isset($_GET['del'])) {
-    $form_data = filteration($_GET);
-
-    if ($form_data['del'] == 'all') {
-        $query = "DELETE FROM `user_queries`";
-        if (mysqli_query($conn, $query)) {
-            alert('success', 'All Message deleted!');
-        } else {
-            alert('error', 'failed');
-        }
-    } else {
-        $query = "DELETE FROM `user_queries` WHERE `id`=?";
-        $values = [$form_data['del']];
-        if (delete($query, $values, 'i')) {
-            alert('success', 'Message deleted!');
-        } else {
-            alert('error', 'failed');
-        }
-    }
-}
 ?>
 
 <!DOCTYPE html>
@@ -235,43 +193,7 @@ if (isset($_GET['del'])) {
     <!-----------icon script----->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script>
-        let add_room_form = document.getElementById('add_room_form')
-
-        add_room_form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            add_rooms();
-        })
-
-        function add_rooms() {
-            let data = new FormData();
-            data.append('add_rooms', '');
-            data.append('name', add_room_form.elements['name'].value);
-            data.append('area', add_room_form.elements['area'].value);
-            data.append('price', add_room_form.elements['price'].value);
-            data.append('quantity', add_room_form.elements['quantity'].value);
-            data.append('adult', add_room_form.elements['adult'].value);
-            data.append('children', add_room_form.elements['children'].value);
-
-            let xhr = new XMLHttpRequest();
-            xhr.open("POST", "ajax/rooms.php", true);
-
-            xhr.onload = function() {
-                var myModal = document.getElementById('add-room');
-                var modal = bootstrap.Modal.getInstance(myModal);
-                modal.hide();
-                if (this.responseText == 1) {
-                    alert('success', 'new room added!');
-                    add_room_form.reset();
-
-                } else {
-                    alert('error', 'Server down!');
-                }
-            }
-
-            xhr.send(data);
-        }
-    </script>
+   
 </body>
 
 </html>
