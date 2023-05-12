@@ -40,14 +40,8 @@
                             </div>
                         
                         <div class="login_buttons d-flex flex-column  flex-lg-row gap-1 justify-content-end">
-<<<<<<< HEAD
                             <a class="btn btn__book text-white" href="/client/contact.php">CONTACT</a>
                         </div>
-=======
-                            <button class="btn btn__book text-white">Login</button>
-                            <button class="btn btn__book_signup" data-bs-toggle="modal" data-bs-target="#sign-up">Sign up</button>
-                       </div>
->>>>>>> b8c81334b30fd04c94aef21cf344488af1baf0ba
                     </ul>
 
                 </div>
