@@ -1,4 +1,4 @@
-<header class="position-fixed top-0 left-0 w-100">
+<header class="position-fixed top-0 left-0 w-100" style="z-index: 999">
     <div class="d-flex flex-column">
         <div class="w-100 d-flex align-items-center justify-content-between px-5" style="height:50px; background-color:#E38B29">
             <div>
@@ -18,6 +18,9 @@
         <nav class="navbar navbar-expand-lg shadow-sm py-3" id="navbar">
             <div class="container">
 
+                <a href="/index.php" class="logo">
+                    <img src="../assets/Bayangan Hotel Logo.png" alt="" width="40" height="40">
+                </a>
                 <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-text-right" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
@@ -27,27 +30,19 @@
                 <!-- menu laptop -->
 
                 <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
-                    <ul class="navbar-nav ms-auto list-unstyled w-100 gap-2 d-flex justify-content-between align-items-center">
-                        <a href="/index.php" class="logo">
-                            <img src="../assets/Bayangan Hotel Logo.png" alt="" width="40" height="40">
-                        </a>
-                        <div class="d-flex gap-4">
+                    <ul class="navbar-nav list-unstyled w-100 gap-2 d-flex justify-content-between align-items-center">
+                        
+                        <div class="d-flex gap-4 mx-auto">
                             <li class="nav-item"><a href="/index.php" class="nav-link text-decoration-none text-secondary fw-semibold">HOME</a></li>
                             <li class="nav-item"><a href="/client/yourStay.php" class="nav-link text-decoration-none text-secondary fw-semibold">STAY</a></li>
                             <li class="nav-item"><a href="/client/hotelAmeneties.php" class="nav-link text-decoration-none text-secondary fw-semibold">EXPERIENCE</a></li>
                             <li class="nav-item"><a href="/client/zambaongaTravel.php" class="nav-link text-decoration-none text-secondary fw-semibold">VISIT US</a></li>
                             <li class="nav-item"><a href="/client/zambaongaTravel.php" class="nav-link text-decoration-none text-secondary fw-semibold">EVENTS</a></li>
-                            </div>
+                          </div>
                         
                         <div class="login_buttons d-flex flex-column  flex-lg-row gap-1 justify-content-end">
-<<<<<<< HEAD
                             <a class="btn btn__book text-white" href="/client/contact.php">CONTACT</a>
                         </div>
-=======
-                            <button class="btn btn__book text-white">Login</button>
-                            <button class="btn btn__book_signup" data-bs-toggle="modal" data-bs-target="#sign-up">Sign up</button>
-                       </div>
->>>>>>> b8c81334b30fd04c94aef21cf344488af1baf0ba
                     </ul>
 
                 </div>
