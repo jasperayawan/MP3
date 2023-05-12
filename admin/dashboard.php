@@ -104,12 +104,12 @@
             </a>
           </li>
           <li class="position-relative w-100 nav-item">
-            <a href="../admin/user.php">
+            <a href="../admin/queries.php">
               <span class="icon">
                 <ion-icon name="people-outline"></ion-icon>
               </span>
               <span class="title d-block position-relative text-start"
-                >Users</span
+                >Queries</span
               >
           </li>
           <li class="position-relative w-100 nav-item">
@@ -173,7 +173,7 @@
           <div class="card">
             <div>
               <div class="numbers">0</div>
-              <div class="cardName">Daily Views</div>
+              <div class="cardName">New Booking</div>
             </div>
 
             <div class="iconBx">
@@ -183,7 +183,7 @@
           <div class="card">
             <div>
               <div class="numbers">0</div>
-              <div class="cardName">Booking</div>
+              <div class="cardName">Refund</div>
             </div>
 
             <div class="iconBx">
@@ -193,7 +193,7 @@
           <div class="card">
             <div>
               <div class="numbers">0</div>
-              <div class="cardName">Reviews</div>
+              <div class="cardName">Queries</div>
             </div>
 
             <div class="iconBx">
@@ -202,8 +202,8 @@
           </div>
           <div class="card">
             <div>
-              <div class="numbers">Php 0</div>
-              <div class="cardName">Earning</div>
+              <div class="numbers">0</div>
+              <div class="cardName">Rating & Reviews</div>
             </div>
 
             <div class="iconBx">
@@ -225,9 +225,11 @@
               <thead>
                 <tr>
                   <td class="fw-bold">id</td>
-                  <td class="fw-bold">Name</td>
-                  <td class="fw-bold">Location</td>
-                  <td class="fw-bold">User Type</td>
+                  <td class="fw-bold">First Name</td>
+                  <td class="fw-bold">Last Name</td>
+                  <td class="fw-bold">Email</td>
+                  <td class="fw-bold">Message</td>
+                  <td class="fw-bold">Seen</td>
                 </tr>
               </thead>
               <tbody>
@@ -260,71 +262,7 @@
             </table>
           </div>
 
-          <!----------new customers------------->
-
-          <div class="recentCustomers">
-            <div class="cardHeader">
-              <h2>Recent Customers</h2>
-            </div>
-
-            <table>
-              <tr>
-                <td width="60px">
-                  <div class="imgBx">
-                    <img src="../assets/diving.jpg" alt="" />
-                  </div>
-                </td>
-                <td>
-                  <h4>
-                    jasper <br />
-                    <span>Pitogo</span>
-                  </h4>
-                </td>
-              </tr>
-
-              <tr>
-                <td width="60px">
-                  <div class="imgBx">
-                    <img src="../assets/diving.jpg" alt="" />
-                  </div>
-                </td>
-                <td>
-                  <h4>
-                    jasper <br />
-                    <span>Pitogo</span>
-                  </h4>
-                </td>
-              </tr>
-
-              <tr>
-                <td width="60px">
-                  <div class="imgBx">
-                    <img src="../assets/diving.jpg" alt="" />
-                  </div>
-                </td>
-                <td>
-                  <h4>
-                    jayson <br />
-                    <span>Pitogo</span>
-                  </h4>
-                </td>
-              </tr>
-
-              <tr>
-                <td width="60px">
-                  <div class="imgBx">
-                    <img src="../assets/diving.jpg" alt="" />
-                  </div>
-                </td>
-                <td>
-                  <h4>
-                    jasper <br />
-                    <span>Pitogo</span>
-                  </h4>
-                </td>
-              </tr>
-            </table>
-          </div>
+          
         </div>
       </div>
     </div>
