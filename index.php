@@ -29,7 +29,7 @@
                     <div>
                         <img class="landing__logo" src="./assets/Bayangan Logo 2.png" alt="Bayangan Hotel and Beach Resort Logo 2" width="470px" height="560px">
                     </div>
-                    <div class="CheckAvailability d-flex flex-md-row justify-content-center align-items-center gap-3 p-3 py-4">
+                    <div class="CheckAvailability d-flex flex-md-row justify-content-center align-items-center gap-5 p-3 py-4">
                         <form action="" method="post">
                             <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-4">
                                 <h2 class="fs-5" style="font-weight:700; color:#1A5F7A">Check Availability</h2>
@@ -42,7 +42,7 @@
                                     <input type="date" class="form-control" id="basic-url" aria-describedby="basic-addon3 basic-addon4">
                                 </div>
                                 <div>
-                                    <select class="row form-select" style="width:150px">
+                                    <select class="row form-select mb-1" style="width:150px; color:#1A5F7A">
                                         <option selected>Adult</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -53,7 +53,7 @@
                                         <option value="7">7</option>
                                         <option value="8">8</option>
                                     </select>
-                                    <select class="row form-select" style="width:150px">
+                                    <select class="row form-select mt-1" style="width:150px; color:#1A5F7A">
                                         <option selected>Child</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -78,7 +78,7 @@
         <section class="experience">
             <div class="container">
                 <div class="experience-content d-flex flex-column justify-content-center align-items-center gap-4">
-                    <h1 class="title text-center">Experience the ultimate beach getaway</h1>
+                    <h1 class="title text-center" style="font-style:italic">Experience the ultimate beach getaway</h1>
                     <p class="text-center">Welcome to our stunning beach resort, where your dream vacation becomes 
                         a reality! Situated on the pristine shores of Labason, our resort offers 
                         a truly unparalleled experience that combines island feel, comfort, and natural 
@@ -91,11 +91,11 @@
             <div class="">
                 <div class="visit-content d-flex flex-column flex-lg-row">
                     <div class="col left-content d-flex flex-column justify-content-center align-items-center gap-5">
-                        <h1 class="title text-center text-white w-50">Your Experience When You Visit</h1>
+                        <h2 class="title text-start text-white w-50" style="font-style:italic">Your Experience When You Visit</h2>
                         <div class="d-flex flex-column gap-2 w-100 justify-items-center align-items-end">
-                            <span class="w-75 text-center py-2">Scuba Diving</span>
-                            <span class="w-75 text-center py-2">Paragliding</span>
-                            <span class="w-75 text-center py-2">Glass Kayaking</span>
+                            <span class="w-75 text-start ps-5 py-3">Scuba Diving</span>
+                            <span class="w-75 text-start ps-5 py-3">Paragliding</span>
+                            <span class="w-75 text-start ps-5 py-3">Glass Kayaking</span>
                         </div>
                     </div>
                     <div class="col right-content">
