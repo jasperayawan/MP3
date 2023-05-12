@@ -220,7 +220,7 @@ require('../admin/essentials.php')
                                         <p>0.00/night</p>
                                         <p>Only available with King Bed rate and availability are subject to changes.</p>
                                         <a type="button" href="#" class="btn btn-primary border-0 rounded-0" style="background-color: #1A5F7A">
-                                            Select Room
+                                            BOOK ROOM
                                         </a>
                                     </div>
                                 </div>
@@ -263,7 +263,7 @@ require('../admin/essentials.php')
                                         <p>0.00/night</p>
                                         <p>Only available with King Bed rate and availability are subject to changes.</p>
                                         <a type="button" href="#" class="btn btn-primary border-0 rounded-0" style="background-color: #1A5F7A">
-                                            Select Room
+                                            BOOK ROOM
                                         </a>
                                     </div>
                                 </div>
@@ -306,7 +306,7 @@ require('../admin/essentials.php')
                                         <p>0.00/night</p>
                                         <p>Only available with King Bed rate and availability are subject to changes.</p>
                                         <a type="button" href="#" class="btn btn-primary border-0 rounded-0" style="background-color: #1A5F7A">
-                                            Select Room
+                                            BOOK ROOM
                                         </a>
                                     </div>
                                 </div>
@@ -349,7 +349,7 @@ require('../admin/essentials.php')
                                         <p>0.00/night</p>
                                         <p>Only available with King Bed rate and availability are subject to changes.</p>
                                         <a type="button" href="#" class="btn btn-primary border-0 rounded-0" style="background-color: #1A5F7A">
-                                            Select Room
+                                            BOOK ROOM
                                         </a>
                                     </div>
                                 </div>
@@ -376,7 +376,7 @@ require('../admin/essentials.php')
                                         <p>0.00/night</p>
                                         <p>Only available with King Bed rate and availability are subject to changes.</p>
                                         <a type="button" href="#" class="btn btn-primary border-0" style="background-color: #1A5F7A">
-                                            Select Room
+                                            BOOK ROOM
                                         </a>
                                     </div>
                                 </div>
