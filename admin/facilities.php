@@ -166,11 +166,11 @@ if (isset($_GET['del'])) {
                             </svg> Add</button>
                     </div>
                     <table>
-                        <thead>
+                        <thead style="background-color: #1A5F7A;">
                             <tr>
-                                <td class="fw-bold">id</td>
-                                <td class="fw-bold">Name</td>
-                                <td class="fw-bold">Action</td>
+                                <td class="fw-bold text-white">id</td>
+                                <td class="fw-bold text-white">Name</td>
+                                <td class="fw-bold text-white">Action</td>
                             </tr>
                         </thead>
                         <tbody id="feature-data">
@@ -221,13 +221,13 @@ if (isset($_GET['del'])) {
                             </svg> Add</button>
                     </div>
                     <table>
-                        <thead>
+                        <thead style="background-color: #1A5F7A;">
                             <tr>
-                                <td class="fw-bold">id</td>
-                                <td class="fw-bold">Icon</td>
-                                <td class="fw-bold">Name</td>
-                                <td class="fw-bold">Description</td>
-                                <td class="fw-bold">Action</td>
+                                <td class="fw-bold text-white">id</td>
+                                <td class="fw-bold text-white">Icon</td>
+                                <td class="fw-bold text-white">Name</td>
+                                <td class="fw-bold text-white">Description</td>
+                                <td class="fw-bold text-white">Action</td>
                             </tr>
                         </thead>
                         <tbody id="facilities-data">
@@ -397,6 +397,25 @@ if (isset($_GET['del'])) {
             }
 
             xhr.send('get_facilities');
+        }
+
+        function rem_facility(val) {
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "ajax/features.php", true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+            xhr.onload = function() {
+                if (this.responseText == 1) {
+                    alert('success', 'Facility removed!');
+                    get_facilities();
+                } else if (this.responseText == 'room added') {
+                    alert('error', 'Facility is added in room!')
+                } else {
+                    alert('error', 'Server down!');
+                }
+            }
+
+            xhr.send('rem_facility=' + val);
         }
 
 

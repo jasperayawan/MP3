@@ -4,13 +4,13 @@
     //change this url once you deploy this system
     define('SITE_URL','http://127.0.0.1/MP3/'); 
     define('ABOUT_IMG_PATH',SITE_URL.'assets/about/');
-    define('FEATURES_IMG_PATH',SITE_URL.'assets/features/');
+    define('FACILITIES_IMG_PATH',SITE_URL.'assets/facilities/');
 
     //Backend upload process needs this data
 
     define('UPLOAD_IMAGE_PATH',$_SERVER['DOCUMENT_ROOT'].'/assets/');
     define('ABOUT_FOLDER','about/');
-    define('FEATURES_FOLDER','features/');
+    define('FACILITIES_FOLDER','facilities/');
 
     function adminLogin(){
         session_start();
