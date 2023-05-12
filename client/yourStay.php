@@ -184,25 +184,42 @@ require('../admin/essentials.php')
                         </div> -->
 
                         <div class="d-flex flex-column gap-4">
-                        <div class="card mb-3">
+                            <!-- room 1 -->
+                        <div class="card mb-3 rounded-0">
                             <div class="row g-0">
                                 <div class="col-md-4">
-                                    <img src="../assets/DR_2.jpg" class="img-fluid rounded-start" alt="...">
+                                    <img src="../assets/DR_2.jpg" class="img-fluid rounded-0" alt="...">
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                                    <div class="card-body rounded-0">
+                                        <h5 class="card-title" style="color:#1A5F7A">Standard Room</h5>
+                                        <ul class="navbar-nav">
+                                            <li>
+                                                <img src="../assets/pan_zoom_FILL0_wght400_GRAD0_opsz48.png" alt="rooms size" style="width:40px;">
+                                                <span>0.00 sq. m</span>
+                                            </li>
+                                            <li>
+                                                <img src="../assets/group_FILL0_wght400_GRAD0_opsz48.png" alt="number of people" style="width:40px;">
+                                                <span>Good for 1 person</span>
+                                            </li>
+                                            <li>
+                                                <img src="../assets/king_bed_FILL0_wght400_GRAD0_opsz48.png" alt="bed size" style="width:40px;">
+                                                <span>Single Bed</span>
+                                            </li>
+                                        </ul>
+                                        <a class="form-text">Includes amenities afforded to lower room types</a> <br />
+                                        <a type="button" href="#" class="btn btn-primary border-0 rounded-0 mt-2" style="background-color: #1A5F7A">
+                                            View Details
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="card-footer d-flex flex-column h-100 border-0" style="background-color: #E38B29; color: #fff">
+                                    <div class="card-footer d-flex flex-column h-100 border-0 rounded-0" style="background-color: #E38B29; color: #fff">
                                         <p>From</p>
                                         <p style="text-decoration-line: line-through">Php 950.00</p>
                                         <p>0.00/night</p>
                                         <p>Only available with King Bed rate and availability are subject to changes.</p>
-                                        <a type="button" href="#" class="btn btn-primary border-0" style="background-color: #1A5F7A">
+                                        <a type="button" href="#" class="btn btn-primary border-0 rounded-0" style="background-color: #1A5F7A">
                                             Select Room
                                         </a>
                                     </div>
@@ -210,25 +227,42 @@ require('../admin/essentials.php')
                             </div>
                         </div>
 
-                        <div class="card mb-3">
+                        <!-- room 2 -->
+                        <div class="card mb-3 rounded-0">
                             <div class="row g-0">
                                 <div class="col-md-4">
-                                    <img src="../assets/Confortroom.jpg" class="img-fluid rounded-start h-100" alt="...">
+                                    <img src="../assets/DSR_1.jpg" class="img-fluid rounded-0 h-100" alt="...">
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                                    <div class="card-body rounded-0">
+                                        <h5 class="card-title" style="color:#1A5F7A">Deluxe Room</h5>
+                                        <ul class="navbar-nav">
+                                            <li>
+                                                <img src="../assets/pan_zoom_FILL0_wght400_GRAD0_opsz48.png" alt="rooms size" style="width:40px">
+                                                <span>0.00 sq. m</span>
+                                            </li>
+                                            <li>
+                                                <img src="../assets/group_FILL0_wght400_GRAD0_opsz48.png" alt="number of people" style="width:40px">
+                                                <span>Good for 1 person</span>
+                                            </li>
+                                            <li>
+                                                <img src="../assets/king_bed_FILL0_wght400_GRAD0_opsz48.png" alt="bed size" style="width:40px">
+                                                <span>Single Bed</span>
+                                            </li>
+                                        </ul>
+                                        <a class="form-text">Includes amenities afforded to lower room types</a> <br />
+                                        <a type="button" href="#" class="btn btn-primary border-0 rounded-0 mt-2" style="background-color: #1A5F7A">
+                                            View Details
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="card-footer d-flex flex-column h-100 border-0" style="background-color: #E38B29; color: #fff">
+                                    <div class="card-footer d-flex flex-column h-100 border-0 rounded-0" style="background-color: #E38B29; color: #fff">
                                         <p>From</p>
                                         <p style="text-decoration-line: line-through">Php 950.00</p>
                                         <p>0.00/night</p>
                                         <p>Only available with King Bed rate and availability are subject to changes.</p>
-                                        <a type="button" href="#" class="btn btn-primary border-0" style="background-color: #1A5F7A">
+                                        <a type="button" href="#" class="btn btn-primary border-0 rounded-0" style="background-color: #1A5F7A">
                                             Select Room
                                         </a>
                                     </div>
@@ -236,25 +270,42 @@ require('../admin/essentials.php')
                             </div>
                         </div>
 
-                        <div class="card mb-3">
+                        <!-- room 3 -->
+                        <div class="card mb-3 rounded-0">
                             <div class="row g-0">
                                 <div class="col-md-4">
-                                    <img src="../assets/Confortroom.jpg" class="img-fluid rounded-start h-100" alt="...">
+                                    <img src="../assets/DOR_2.jpg" class="img-fluid rounded-0 h-100" alt="...">
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                                    <div class="card-body rounded-0">
+                                        <h5 class="card-title" style="color:#1A5F7A">Double Room</h5>
+                                        <ul class="navbar-nav">
+                                            <li>
+                                                <img src="../assets/pan_zoom_FILL0_wght400_GRAD0_opsz48.png" alt="rooms size" style="width:40px">
+                                                <span>0.00 sq. m</span>
+                                            </li>
+                                            <li>
+                                                <img src="../assets/group_FILL0_wght400_GRAD0_opsz48.png" alt="number of people" style="width:40px">
+                                                <span>Good for 1 person</span>
+                                            </li>
+                                            <li>
+                                                <img src="../assets/king_bed_FILL0_wght400_GRAD0_opsz48.png" alt="bed size" style="width:40px">
+                                                <span>Single Bed</span>
+                                            </li>
+                                        </ul>
+                                        <a class="form-text">Includes amenities afforded to lower room types</a> <br />
+                                        <a type="button" href="#" class="btn btn-primary border-0 rounded-0 mt-2" style="background-color: #1A5F7A">
+                                            View Details
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="card-footer d-flex flex-column h-100 border-0" style="background-color: #E38B29; color: #fff">
+                                    <div class="card-footer d-flex flex-column h-100 border-0 rounded-0" style="background-color: #E38B29; color: #fff">
                                         <p>From</p>
                                         <p style="text-decoration-line: line-through">Php 950.00</p>
                                         <p>0.00/night</p>
                                         <p>Only available with King Bed rate and availability are subject to changes.</p>
-                                        <a type="button" href="#" class="btn btn-primary border-0" style="background-color: #1A5F7A">
+                                        <a type="button" href="#" class="btn btn-primary border-0 rounded-0" style="background-color: #1A5F7A">
                                             Select Room
                                         </a>
                                     </div>
@@ -262,25 +313,42 @@ require('../admin/essentials.php')
                             </div>
                         </div>
 
-                        <div class="card mb-3">
+                        <!-- room 4 -->
+                        <div class="card mb-3 rounded-0">
                             <div class="row g-0">
                                 <div class="col-md-4">
-                                    <img src="../assets/Confortroom.jpg" class="img-fluid rounded-start h-100" alt="...">
+                                    <img src="../assets/OBS_1.jpg" class="img-fluid rounded-0 h-100" alt="...">
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                                    <div class="card-body rounded-0">
+                                        <h5 class="card-title" style="color:#1A5F7A">Premium Suite</h5>
+                                        <ul class="navbar-nav">
+                                            <li>
+                                                <img src="../assets/pan_zoom_FILL0_wght400_GRAD0_opsz48.png" alt="rooms size" style="width:40px">
+                                                <span>0.00 sq. m</span>
+                                            </li>
+                                            <li>
+                                                <img src="../assets/group_FILL0_wght400_GRAD0_opsz48.png" alt="number of people" style="width:40px">
+                                                <span>Good for 1 person</span>
+                                            </li>
+                                            <li>
+                                                <img src="../assets/king_bed_FILL0_wght400_GRAD0_opsz48.png" alt="bed size" style="width:40px">
+                                                <span>Single Bed</span>
+                                            </li>
+                                        </ul>
+                                        <a class="form-text">Includes amenities afforded to lower room types</a> <br />
+                                        <a type="button" href="#" class="btn btn-primary border-0 rounded-0 mt-2" style="background-color: #1A5F7A">
+                                            View Details
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="card-footer d-flex flex-column h-100 border-0" style="background-color: #E38B29; color: #fff">
+                                    <div class="card-footer d-flex flex-column h-100 border-0 rounded-0" style="background-color: #E38B29; color: #fff">
                                         <p>From</p>
                                         <p style="text-decoration-line: line-through">Php 950.00</p>
                                         <p>0.00/night</p>
                                         <p>Only available with King Bed rate and availability are subject to changes.</p>
-                                        <a type="button" href="#" class="btn btn-primary border-0" style="background-color: #1A5F7A">
+                                        <a type="button" href="#" class="btn btn-primary border-0 rounded-0" style="background-color: #1A5F7A">
                                             Select Room
                                         </a>
                                     </div>
@@ -288,6 +356,7 @@ require('../admin/essentials.php')
                             </div>
                         </div>
 
+                        <!-- room 4 -->
                         <div class="card mb-3">
                             <div class="row g-0">
                                 <div class="col-md-4">
