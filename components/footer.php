@@ -14,8 +14,8 @@
 
         <section class="footer relative overflow-hidden">
             <div class="footer_content">
-                <div class="row d-flex flex-wrap">
-                    <div class="col-12 col-lg-4 left_content">
+                <div class="row">
+                    <div class="col-lg-4 left_content">
                         <div class="p-5 d-flex flex-column gap-3 text-center justify-content-center align-items-center">
                             <div class="logo">
                                 <a href="/index.php" class="logo">
@@ -46,8 +46,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-lg-8 p-0">
-                        <div class="row d-flex flex-column flex-md-row container h-100 gap-4 gap-lg-0 right_content py-5">
+                    <div class="col-md-12 col-lg-8 p-0 right_content">
+                        <div class="row d-flex flex-column flex-md-row container gap-4 gap-lg-0 py-5">
                             <div class="col d-flex justify-content-start px-5 h-100">
                                 <ul class="list-unstyled plan d-flex justify-content-center flex-column gap-2">
                                     <h2 class="plan_footer text-white">Plan your visit</h2>
