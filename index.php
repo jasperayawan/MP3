@@ -27,31 +27,46 @@
             <div class="container">
                 <div class="hero-content w-100 h-100 d-flex gap-5 flex-column justify-content-center align-items-center">
                     <div>
-                        <img src="./assets/Bayangan Logo 2.png" alt="" width="200" height="220">
+                        <img class="landing__logo" src="./assets/Bayangan Logo 2.png" alt="Bayangan Hotel and Beach Resort Logo 2" width="470px" height="560px">
                     </div>
-                    <div class="CheckAvailability d-flex flex-md-row justify-content-center align-items-center gap-3 rounded-2 p-3 py-4">
+                    <div class="CheckAvailability d-flex flex-md-row justify-content-center align-items-center gap-3 p-3 py-4">
                         <form action="" method="post">
-                            <h2 class="fs-5">Check Booking Availability</h2>
                             <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-4">
-                                
-                                <div class="d-flex flex-column">
-                                    <label class="form-label fw-semibold">check in</label>
-                                    <input type="date" name="date" class="rounded-0 px-2 py-1 border-0">
+                                <h2 class="fs-5" style="font-weight:700; color:#1A5F7A">Check Availability</h2>
+                                <div class="input-group" style="width:270px">
+                                    <span class="input-group-text" id="basic-addon3" style="color:#1A5F7A">Check-In</span>
+                                    <input type="date" class="form-control" id="basic-url" aria-describedby="basic-addon3 basic-addon4">
                                 </div>
-                                <div class="d-flex flex-column fw-semibold">
-                                    <label class="form-label">check out</label>
-                                    <input type="date" name="date" class="form-control rounded-2 px-2 py-1 border-0">
+                                <div class="input-group" style="width:270px">
+                                    <span class="input-group-text" id="basic-addon3" style="color:#1A5F7A">Check-Out</span>
+                                    <input type="date" class="form-control" id="basic-url" aria-describedby="basic-addon3 basic-addon4">
                                 </div>
                                 <div>
-                                    <label class="form-label fw-semibold">user type</label>
-                                    <select class="form-select">
-                                        <option selected>Open this select menu</option>
-                                        <option value="1">Adults</option>
-                                        <option value="2">Child</option>
+                                    <select class="row form-select" style="width:150px">
+                                        <option selected>Adult</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                    </select>
+                                    <select class="row form-select" style="width:150px">
+                                        <option selected>Child</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
                                     </select>
                                 </div>
                                 <div>
-                                    <button type="submit" class="btn btn__book text-white">Book now</button>
+                                    <button type="submit" class="btn btn__book text-white" style="width:150px; font-weight:700">BOOK NOW</button>
                                 </div>
                             </div>
                         </form>
