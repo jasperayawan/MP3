@@ -16,10 +16,10 @@
     <link rel="stylesheet" href="./client/index.css">
 </head>
 <body>
-   
     <?php
         require('./components/header.php');
     ?>
+
     <!-- hero section --->
 
     <main>
@@ -27,9 +27,8 @@
             <div class="container">
                 <div class="hero-content w-100 h-100 d-flex gap-5 flex-column justify-content-center align-items-center">
                     <div>
-                        <img src="./assets/Bayangan Hotel Logo.png" alt="" width="200" height="220">
+                        <img src="./assets/Bayangan Logo 2.png" alt="" width="200" height="220">
                     </div>
-                    <h1 class="title text-center text-white">Bayangan Hotel and Beach Resort</h1>
                     <div class="CheckAvailability d-flex flex-md-row justify-content-center align-items-center gap-3 rounded-2 p-3 py-4">
                         <form action="" method="post">
                             <h2 class="fs-5">Check Booking Availability</h2>
@@ -37,7 +36,7 @@
                                 
                                 <div class="d-flex flex-column">
                                     <label class="form-label fw-semibold">check in</label>
-                                    <input type="date" name="date" class="rounded-2 px-2 py-1 border-0">
+                                    <input type="date" name="date" class="rounded-0 px-2 py-1 border-0">
                                 </div>
                                 <div class="d-flex flex-column fw-semibold">
                                     <label class="form-label">check out</label>
@@ -49,7 +48,6 @@
                                         <option selected>Open this select menu</option>
                                         <option value="1">Adults</option>
                                         <option value="2">Child</option>
-                                        <option value="3">Pets</option>
                                     </select>
                                 </div>
                                 <div>
