@@ -246,7 +246,7 @@ require('./admin/essentials.php')
 
 
     <?php
-    require('./components/footer.php')
+    require('./client/footer.php')
     ?>
 
 
