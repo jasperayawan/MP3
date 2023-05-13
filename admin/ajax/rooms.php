@@ -223,21 +223,35 @@ if (isset($_POST['add_image'])) {
 
 if (isset($_POST['get_room_images'])) {
     $form_data = filteration($_POST);
-    $res = select("SELECT * FROM `room_images` WHERE `room_id`=?",[$form_data['get_room_images']],'i');
+    $res = select("SELECT * FROM `room_images` WHERE `room_id`=?", [$form_data['get_room_images']], 'i');
 
     $path = ROOMS_PATH;
 
-    while($row = mysqli_fetch_assoc($res))
-    {
+    while ($row = mysqli_fetch_assoc($res)) {
+        if ($row['thumb'] == 1) {
+            $thumb_btn = "<button class='btn btn-sm shadow-none btn-success text-light'>
+            <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-check-lg' viewBox='0 0 16 16'>
+                <path d='M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z'/>
+            </svg></button>";
+        } else {
+            $thumb_btn = "<button class='btn btn-sm shadow-none' onclick='thumb_image($row[id],$row[room_id])' style='background-color: grey; color: #fff;'>
+            <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-check-lg' viewBox='0 0 16 16'>
+            <path d='M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z'/>
+          </svg>
+        </button>";
+        }
+
         echo <<<data
             <tr class='align-middle'>
                 <td><img src='$path$row[image]' style='width: 100px' class='img-fluid'></td>
-                <td>thumb</td>
+                <td>
+                    $thumb_btn
+                </td>
                 <td>
                     <button class='btn btn-sm shadow-none' onclick='rem_image($row[id],$row[room_id])' style='background-color: red; color: #fff;'>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
-                        <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
+                        <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-trash' viewBox='0 0 16 16'>
+                        <path d='M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z'/>
+                        <path d='M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z'/>
                     </svg>
                     </button>
                 </td>
@@ -246,22 +260,34 @@ if (isset($_POST['get_room_images'])) {
     }
 }
 
-if(isset($_POST['rem_image']))
-{
+if (isset($_POST['rem_image'])) {
     $form_data = filteration($_POST);
 
-    $values = [$form_data['image_id'],$form_data['room_id']];
+    $values = [$form_data['image_id'], $form_data['room_id']];
 
     $pre_q = "SELECT * FROM `room_images` WHERE `id`=? AND `room_id`=?";
-    $res = select($pre_q,$values,'ii');
+    $res = select($pre_q, $values, 'ii');
     $img = mysqli_fetch_assoc($res);
 
-    if(deleteImage($img['image'],ROOMS_FOLDER)){
+    if (deleteImage($img['image'], ROOMS_FOLDER)) {
         $query = "DELETE FROM `room_images` WHERE `id`=? AND `room_id`=?";
-        $res = delete($query,$values,'ii');
+        $res = delete($query, $values, 'ii');
         echo $res;
-    }
-    else{
+    } else {
         echo 0;
     }
+}
+
+if (isset($_POST['thumb_image'])) {
+    $form_data = filteration($_POST);
+
+    $pre_q = "UPDATE `room_images` SET `thumb`=? WHERE `room_id`=?";
+    $pre_v = [0,$form_data['room_id']];
+    $pre_res = update($pre_q,$pre_v,'ii');
+
+    $query = "UPDATE `room_images` SET `thumb`=? WHERE `id`=? AND `room_id`=?";
+    $v = [1,$form_data['image_id'],$form_data['room_id']];
+    $res = update($query,$v,'iii');
+
+    echo $res;
 }
