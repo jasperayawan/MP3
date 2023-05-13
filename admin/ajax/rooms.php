@@ -89,6 +89,11 @@ if (isset($_POST['get_all_rooms'])) {
                         <path d='M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z'/>
                         <path fill-rule='evenodd' d='M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z'/>
                     </svg></button>
+                    <button type='button' onclick=\"room_images($row[id],'$row[name]')\" class='btn btn-info shadow-none btn-sm' data-bs-toggle='modal' data-bs-target='#room-images'>
+                    <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-images' viewBox='0 0 16 16'>
+                    <path d='M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z'/>
+                    <path d='M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2zM14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1zM2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1h-10z'/>
+                  </svg></button>
                     </td>
                 </tr>
             ";
@@ -97,27 +102,26 @@ if (isset($_POST['get_all_rooms'])) {
     echo $data;
 }
 
-if(isset($_POST['get_room']))
-{
+if (isset($_POST['get_room'])) {
     $form_data = filteration($_POST);
 
-    $res1 = select("SELECT * FROM `rooms` WHERE `id`=?",[$form_data['get_room']],'i');
-    $res2 = select("SELECT * FROM `room_features` WHERE `room_id`=?",[$form_data['get_room']],'i');
-    $res3 = select("SELECT * FROM `room_facilities` WHERE `room_id`=?",[$form_data['get_room']],'i');
+    $res1 = select("SELECT * FROM `rooms` WHERE `id`=?", [$form_data['get_room']], 'i');
+    $res2 = select("SELECT * FROM `room_features` WHERE `room_id`=?", [$form_data['get_room']], 'i');
+    $res3 = select("SELECT * FROM `room_facilities` WHERE `room_id`=?", [$form_data['get_room']], 'i');
 
     $roomdata = mysqli_fetch_assoc($res1);
     $features = [];
     $facilities = [];
 
-    if(mysqli_num_rows($res2)>0){
-        while($row = mysqli_fetch_assoc($res2)){
-            array_push($features,$row['features_id']);
+    if (mysqli_num_rows($res2) > 0) {
+        while ($row = mysqli_fetch_assoc($res2)) {
+            array_push($features, $row['features_id']);
         }
     }
 
-    if(mysqli_num_rows($res3)>0){
-        while($row = mysqli_fetch_assoc($res3)){
-            array_push($facilities,$row['facilities_id']);
+    if (mysqli_num_rows($res3) > 0) {
+        while ($row = mysqli_fetch_assoc($res3)) {
+            array_push($facilities, $row['facilities_id']);
         }
     }
 
@@ -128,8 +132,7 @@ if(isset($_POST['get_room']))
     echo $data;
 }
 
-if(isset($_POST['edit_room']))
-{
+if (isset($_POST['edit_room'])) {
     $features = filteration(json_decode($_POST['features']));
     $facilities = filteration(json_decode($_POST['facilities']));
 
@@ -139,14 +142,14 @@ if(isset($_POST['edit_room']))
     $query = "UPDATE `rooms` SET `name`=?,`area`=?,`price`=?,`quantity`=?,`adult`=?,`children`=?,`description`=? WHERE `id`=?";
     $values = [$form_data['name'], $form_data['area'], $form_data['price'], $form_data['quantity'], $form_data['adult'], $form_data['children'], $form_data['desc'], $form_data['room_id']];
 
-    if(update($query,$values,'siiiiisi')){
+    if (update($query, $values, 'siiiiisi')) {
         $flag = 1;
     }
 
-    $del_features = delete("DELETE FROM `room_features` WHERE `room_id`=?", [$form_data['room_id']],'i');
-    $del_facilities = delete("DELETE FROM `room_facilities` WHERE `room_id`=?", [$form_data['room_id']],'i');
+    $del_features = delete("DELETE FROM `room_features` WHERE `room_id`=?", [$form_data['room_id']], 'i');
+    $del_facilities = delete("DELETE FROM `room_facilities` WHERE `room_id`=?", [$form_data['room_id']], 'i');
 
-    if(!($del_facilities && $del_features)){
+    if (!($del_facilities && $del_features)) {
         $flag = 0;
     }
 
@@ -154,7 +157,7 @@ if(isset($_POST['edit_room']))
 
     if ($stmt = mysqli_prepare($conn, $query2)) {
         foreach ($facilities as $f) {
-            mysqli_stmt_bind_param($stmt,'ii',$form_data['room_id'],$f);
+            mysqli_stmt_bind_param($stmt, 'ii', $form_data['room_id'], $f);
             mysqli_stmt_execute($stmt);
         }
         $flag = 1;
@@ -169,7 +172,7 @@ if(isset($_POST['edit_room']))
 
     if ($stmt = mysqli_prepare($conn, $query3)) {
         foreach ($features as $f) {
-            mysqli_stmt_bind_param($stmt, 'ii',$form_data['room_id'], $f);
+            mysqli_stmt_bind_param($stmt, 'ii', $form_data['room_id'], $f);
             mysqli_stmt_execute($stmt);
         }
         $flat = 1;
@@ -196,5 +199,49 @@ if (isset($_POST['toggle_status'])) {
         echo 1;
     } else {
         echo 0;
+    }
+}
+
+if (isset($_POST['add_image'])) {
+    $form_data = filteration($_POST);
+
+    $img_r = uploadImage($_FILES['image'], ROOMS_FOLDER);
+
+    if ($img_r == 'inv_img') {
+        echo $img_r;
+    } else if ($img_r == 'inv_size') {
+        echo $img_r;
+    } else if ($img_r == 'upd_failed') {
+        echo $img_r;
+    } else {
+        $query = "INSERT INTO `room_images`(`room_id`, `image`) VALUES (?,?)";
+        $values = [$form_data['room_id'], $img_r];
+        $res = insert($query, $values, 'is');
+        echo $res;
+    }
+}
+
+if (isset($_POST['get_room_images'])) {
+    $form_data = filteration($_POST);
+    $res = select("SELECT * FROM `room_images` WHERE `room_id`=?",[$form_data['get_room_images']],'i');
+
+    $path = ROOMS_PATH;
+
+    while($row = mysqli_fetch_assoc($res))
+    {
+        echo <<<data
+            <tr class='align-middle'>
+                <td><img src='$path$row[image]' style='width: 100px' class=''img-fluid></td>
+                <td>thumb</td>
+                <td>
+                    <button class='btn' onclick='' btn-sm shadow-none' style='background-color: red; color: #fff;'>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
+                        <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
+                    </svg>
+                    </button>
+                </td>
+            </tr>
+        data;
     }
 }
