@@ -104,9 +104,20 @@
         $form_data = filteration($_POST);
         $values = [$form_data['rem_facility']];
 
-        $query = "DELETE FROM `facilities` WHERE `id`=?";
-        $res = delete($query,$values,'i');
-        echo $res;
+
+        $pre_query = "SELECT * FROM `facilities` WHERE `id`=?";
+        $res = select($pre_query,$values,'i');
+        $img = mysqli_fetch_assoc($res);
+
+        if(deleteImage($img['icon'],FACILITIES_FOLDER)){
+            $query = "DELETE FROM `facilities` WHERE `id`=?";
+            $res = delete($query,$values,'i');
+            echo $res;
+        }
+        else{
+            echo 0;
+        }
+
 
     }
 ?>
