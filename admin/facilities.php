@@ -2,7 +2,6 @@
 require('../admin/essentials.php');
 require('../admin/db_config.php');
 adminLogin();
-
 ?>
 
 <!DOCTYPE html>
@@ -60,7 +59,7 @@ adminLogin();
                     </a>
                 </li>
                 <li class="position-relative w-100 nav-item">
-                    <a href="adminProduct.html">
+                    <a href="../admin/rooms.php">
                         <span class="icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
                                 <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z" />
@@ -109,75 +108,121 @@ adminLogin();
 
 
 
-            <!----------order details list------->
+            <!----------features------->
 
-            <div class="px-4 px-lg-5 py-lg-5">
-                <div class="text-end py-2">
-                    <button type="button" class="btn btn-dark shadow-none btn-sm" data-bs-toggle="modal" data-bs-target="#add-room">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square" viewBox="0 0 16 16">
-                            <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
-                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
-                        </svg> Add</button>
+            <div class="details shadow-sm">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>Feature</h2>
+                    </div>
+                    <div class="mb-2 d-flex align-items-center justify-content-end">
+                        <button type="button" class="btn btn-dark shadow-none btn-sm" data-bs-toggle="modal" data-bs-target="#feature-settings">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square" viewBox="0 0 16 16">
+                                <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                            </svg> Add</button>
+                    </div>
+                    <table>
+                        <thead style="background-color: #1A5F7A;">
+                            <tr>
+                                <td class="fw-bold text-white">id</td>
+                                <td class="fw-bold text-white">Name</td>
+                                <td class="fw-bold text-white">Action</td>
+                            </tr>
+                        </thead>
+                        <tbody id="feature-data">
+                        </tbody>
+                    </table>
                 </div>
-                <table class="table table-hover">
-                    <thead style="background-color: #1A5F7A;">
-                        <tr>
-                            <td class="fw-bold text-white">id</td>
-                            <td class="fw-bold text-white">Name</td>
-                            <td class="fw-bold text-white">Area Guest</td>
-                            <td class="fw-bold text-white">Price</td>
-                            <td class="fw-bold text-white">Quantity</td>
-                            <td class="fw-bold text-white">Status</td>
-                        </tr>
-                    </thead>
-                    <tbody id="room-data">
 
-                    </tbody>
-                </table>
-            </div>
+                <!-------------Features modal-------------->
 
-            <!-----add room modal---->
-
-            <div class="modal fade" id="add-room" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1">
-                <div class="modal-dialog modal-lg">
-                    <form id="add_room_form" autocomplete="off">
-                        <div class="modal-content">
-                            <div class="modal-header d-flex justify-content-between align-items-center">
-                                <h5 class="modal-title text-dark">Add Room</h5>
-                                <button class="btn btn-close" data-bs-dismiss="modal"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="row">
-                                    <div class="col-md-6 mb-3">
-                                        <label for="" class="form-label fw-bold">Name</label>
-                                        <input type="text" name="name" class="form-control shadow-none" required>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label for="" class="form-label fw-bold">Area</label>
-                                        <input type="number" min="1" name="area" class="form-control shadow-none" required>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label for="" class="form-label fw-bold">Price</label>
-                                        <input type="number" min="1" name="price" class="form-control shadow-none" required>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label for="" class="form-label fw-bold">Quantity</label>
-                                        <input type="number" min="1" name="quantity" class="form-control shadow-none" required>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label for="" class="form-label fw-bold">Adult (Max.)</label>
-                                        <input type="number" min="1" name="adult" class="form-control shadow-none" required>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label for="" class="form-label fw-bold">Children (Max.)</label>
-                                        <input type="number" min="1" name="children" class="form-control shadow-none" required>
+                <div class="modal fade" id="feature-settings" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1">
+                    <div class="modal-dialog">
+                        <form action="" id="feature_settings_form">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Add Feature</h5>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="">
+                                        <label class="form-label fw-semibold">Name</label>
+                                        <input type="text" name="feature_name" class="form-control shadow-none" required>
                                     </div>
 
                                 </div>
+                                <div class="modal-footer">
+                                    <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">
+                                        Cancel
+                                    </button>
+                                    <button type="submit" class="btn btn-primary">
+                                        Submit
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="details shadow-sm">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>Facilities</h2>
+                    </div>
+                    <div class="mb-2 d-flex align-items-center justify-content-end">
+                        <button type="button" class="btn btn-dark shadow-none btn-sm" data-bs-toggle="modal" data-bs-target="#facility-settings">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square" viewBox="0 0 16 16">
+                                <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                            </svg> Add</button>
+                    </div>
+                    <table>
+                        <thead style="background-color: #1A5F7A;">
+                            <tr>
+                                <td class="fw-bold text-white">id</td>
+                                <td class="fw-bold text-white">Icon</td>
+                                <td class="fw-bold text-white">Name</td>
+                                <td class="fw-bold text-white">Description</td>
+                                <td class="fw-bold text-white">Action</td>
+                            </tr>
+                        </thead>
+                        <tbody id="facilities-data">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-------------Facilities modal-------------->
+
+            <div class="modal fade" id="facility-settings" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1">
+                <div class="modal-dialog">
+                    <form action="" id="facility_settings_form">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Add facility</h5>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold">Name</label>
+                                    <input type="text" name="facility_name" class="form-control shadow-none" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold">Icon</label>
+                                    <input type="file" name="facility_icon" accept=".svg" class="form-control shadow-none" required>
+                                </div>
+                                <div class="m-3">
+                                    <label class="form-label fw-semibold">Description</label>
+                                    <textarea name="facility_desc" class="form-control shadow-none" rows="3"></textarea>
+                                </div>
                             </div>
                             <div class="modal-footer">
-                                <button class="btn btn-primary" data-bs-dismiss="modal">Cancel</button>
-                                <button class="btn btn-secondary" type="submit">Submit</button>
+                                <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">
+                                    Cancel
+                                </button>
+                                <button type="submit" class="btn btn-primary">
+                                    Submit
+                                </button>
                             </div>
                         </div>
                     </form>
@@ -193,7 +238,149 @@ adminLogin();
     <!-----------icon script----->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-   
+
+    <script>
+        let feature_settings_form = document.getElementById('feature_settings_form');
+        let facility_settings_form = document.getElementById('facility_settings_form')
+
+        feature_settings_form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            add_feature();
+        })
+
+        function add_feature() {
+            let data = new FormData();
+            data.append('name', feature_settings_form.elements['feature_name'].value);
+            data.append('add_feature', '');
+
+
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "ajax/features.php", true);
+
+            xhr.onload = function() {
+                var myModal = document.getElementById('feature-settings');
+                var modal = bootstrap.Modal.getInstance(myModal);
+                modal.hide();
+
+                if (this.responseText == 1) {
+                    alert('success', 'New member added!');
+                    feature_settings_form.elements['feature_name'].value = '';
+                    get_features();
+                } else {
+                    alert('error', 'server down!')
+                }
+
+            }
+
+            xhr.send(data);
+        }
+
+        function get_features() {
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "ajax/features.php", true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+            xhr.onload = function() {
+                document.getElementById('feature-data').innerHTML = this.responseText;
+            }
+
+            xhr.send('get_features');
+        }
+
+        function rem_feature(val) {
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "ajax/features.php", true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+            xhr.onload = function() {
+                if (this.responseText == 1) {
+                    alert('success', 'Feature removed!');
+                    get_features();
+                } else if (this.responseText == 'room added') {
+                    alert('error', 'Feature is added in room!')
+                } else {
+                    alert('error', 'Server down!');
+                }
+            }
+
+            xhr.send('rem_feature=' + val);
+        }
+
+        facility_settings_form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            add_facility();
+        })
+
+        function add_facility() {
+            let data = new FormData();
+            data.append('name', facility_settings_form.elements['facility_name'].value);
+            data.append('icon', facility_settings_form.elements['facility_icon'].files[0]);
+            data.append('desc', facility_settings_form.elements['facility_desc'].value);
+            data.append('add_facility', '');
+
+
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "ajax/features.php", true);
+
+            xhr.onload = function() {
+                var myModal = document.getElementById('facility-settings');
+                var modal = bootstrap.Modal.getInstance(myModal);
+                modal.hide();
+
+                if (this.responseText == 'inv_img') {
+                    alert('error', 'Only SVG images are allowed!');
+                } else if (this.responseText == 'inv_size') {
+                    alert('error', 'Image should be less than 1MB!');
+                } else if (this.responseText == 'upd_failed') {
+                    alert('error', 'Image upload failed. Server down!');
+                } else {
+                    alert('success', 'New facility added!');
+                    facility_settings_form.reset();
+                    get_facilities();
+                }
+
+            }
+
+            xhr.send(data);
+        }
+
+        function get_facilities() {
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "ajax/features.php", true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+            xhr.onload = function() {
+                document.getElementById('facilities-data').innerHTML = this.responseText;
+            }
+
+            xhr.send('get_facilities');
+        }
+
+        function rem_facility(val) {
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "ajax/features.php", true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+            xhr.onload = function() {
+                if (this.responseText == 1) {
+                    alert('success', 'Facility removed!');
+                    get_facilities();
+                } else if (this.responseText == 'room added') {
+                    alert('error', 'Facility is added in room!')
+                } else {
+                    alert('error', 'Server down!');
+                }
+            }
+
+            xhr.send('rem_facility=' + val);
+        }
+
+
+        window.onload = function() {
+            get_features();
+            get_facilities();
+        }
+    </script>
 </body>
 
 </html>
