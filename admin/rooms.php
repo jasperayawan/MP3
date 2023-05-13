@@ -244,7 +244,7 @@ adminLogin();
 
                 <div class="modal fade" id="edit-room-settings" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1">
                     <div class="modal-dialog modal-lg">
-                        <form action="" id="add_room_form" autocomplete="off">
+                        <form action="" id="edit_room_form" autocomplete="off">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title">Edit Room</h5>
@@ -325,7 +325,7 @@ adminLogin();
                                             <textarea name="desc" rows="4" class="form-control shadow-none" required></textarea>
                                         </div>
 
-                                        <input type="hidden" name=''>
+                                        <input type="hidden" name='room_id'>
                                         
                                     </div>
                                 </div>
@@ -429,6 +429,103 @@ adminLogin();
 
             xhr.send('get_all_rooms');
         }
+
+        let edit_room_form = document.getElementById('edit_room_form');
+
+        edit_room_form.addEventListener('submit', function(e){
+            e.preventDefault();
+            submit_edit_room();
+            
+        })
+
+        function submit_edit_room() {
+            let data = new FormData();
+            data.append('edit_room', '');
+            data.append('room_id',edit_room_form.elements['room_id'].value);
+            data.append('name', edit_room_form.elements['name'].value);
+            data.append('area', edit_room_form.elements['area'].value);
+            data.append('price', edit_room_form.elements['price'].value);
+            data.append('quantity', edit_room_form.elements['quantity'].value);
+            data.append('adult', edit_room_form.elements['adult'].value);
+            data.append('children', edit_room_form.elements['children'].value);
+            data.append('desc', edit_room_form.elements['desc'].value);
+
+            let features = [];
+
+            edit_room_form.elements['features'].forEach(el => {
+                if(el.checked){
+                    features.push(el.value)
+                }
+            });
+
+            let facilities = [];
+
+            edit_room_form.elements['facilities'].forEach(el => {
+                if(el.checked){
+                    facilities.push(el.value)
+                }
+            });
+
+            data.append('features', JSON.stringify(features));
+            data.append('facilities', JSON.stringify(facilities));
+
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "ajax/rooms.php", true);
+
+            xhr.onload = function() {
+                var myModal = document.getElementById('edit-room-settings');
+                var modal = bootstrap.Modal.getInstance(myModal);
+                modal.hide();
+
+                if (this.responseText == 1) {
+                    alert('success', 'Room data edited!');
+                    edit_room_form.reset();
+                    get_all_rooms();
+                    
+                } else {
+                    alert('error', 'server down!')
+                }
+
+            }
+
+            xhr.send(data);
+        }
+
+        function edit_details(id)
+        {
+            let xhr = new XMLHttpRequest();
+
+            xhr.open("POST", "ajax/rooms.php", true);
+            xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+
+            xhr.onload = function() {
+                let data = JSON.parse(this.responseText);
+
+                edit_room_form.elements['name'].value = data.roomdata.name;
+                edit_room_form.elements['area'].value = data.roomdata.area;
+                edit_room_form.elements['price'].value = data.roomdata.price;
+                edit_room_form.elements['quantity'].value = data.roomdata.quantity;
+                edit_room_form.elements['adult'].value = data.roomdata.adult;
+                edit_room_form.elements['children'].value = data.roomdata.children;
+                edit_room_form.elements['desc'].value = data.roomdata.description;
+                edit_room_form.elements['room_id'].value = data.roomdata.id;
+
+                edit_room_form.elements['features'].forEach(el => {
+                    if(data.features.includes(Number(el.value))){
+                        el.checked = true;
+                    }
+                });
+
+                edit_room_form.elements['facilities'].forEach(el => {
+                    if(data.facilities.includes(Number(el.value))){
+                        el.checked = true;
+                    }
+                });
+            }
+
+            xhr.send('get_room='+id);
+        }
+
 
         function toggle_status(id,val)
         {
