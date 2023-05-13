@@ -1,10 +1,11 @@
 <?php
-    require('./admin/db_config.php');
-    require('./admin/essentials.php')
+require('./admin/db_config.php');
+require('./admin/essentials.php')
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,12 +13,13 @@
     <title>Bayangan</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./client/index.css">
 </head>
+
 <body>
     <?php
-        require('./components/header.php');
+    require('./components/header.php');
     ?>
 
     <!-- hero section --->
@@ -78,13 +80,13 @@
         <section class="experience">
             <div class="container">
                 <div class="experience-content d-flex flex-column justify-content-center align-items-center gap-4">
-                    <h1 class="title text-center" style="font-style:italic">Experience the ultimate beach getaway</h1>
-                    <p class="text-center">Welcome to our stunning beach resort, where your dream vacation becomes 
-                        a reality! Situated on the pristine shores of Labason, our resort offers 
-                        a truly unparalleled experience that combines island feel, comfort, and natural 
+                    <h2 class="title text-center" style="font-style:italic">Experience the ultimate beach getaway</h2>
+                    <p class="text-center">Welcome to our stunning beach resort, where your dream vacation becomes
+                        a reality! Situated on the pristine shores of Labason, our resort offers
+                        a truly unparalleled experience that combines island feel, comfort, and natural
                         beauty.</p>
                 </div>
-            </div>    
+            </div>
         </section>
         <!--  <section class="visit position-relative">
             <div class="">
@@ -102,44 +104,48 @@
                     </div>
                 </div>
             </div>
+        </section>-->
+        <section class="rooms">
+            <div class="container">
+                <div class="rooms-content d-flex flex-column justify-content-center gap-4">
+                    <div class="title col-lg-3">
+                        <h3 style="letter-spacing:0.15em; font-size:20px">ROOMS AND VILLAS</h3>
+                        <h2><em>Comfort away from home</em></h2>
+                    </div>
+                    <div class="col-lg-8">
+                        <p class="text-center text-lg-start">
+                            Bayangan Hotel and Beach Resort offers a selection of beautifully designed guest rooms, including accessible options.
+                            Each guest room and suite is thoughtfully appointed with premium features such as granite countertops, luxurious linens, 
+                            a 55" flat-screen TV, complimentary Wi-Fi, upscale bath amenities, and plush bathrobes. 
+                            Moreover, the majority of rooms boast stunning views of the marina from private 
+                            balconies or outdoor patio areas, providing a picturesque setting to relax and unwind.
+                        </p>
+                    </div>
+                    <button class="btn btn_view rounded-0">BOOK ROOMS</button>
+                </div>
+            </div>
         </section>
 
         <section class="featured">
             <div class="container">
                 <div class="d-flex flex-column gap-3 flex-md-row featured-content p-0">
                     <div class="col d-flex justify-content-center align-items-center left-content position-relative overflow-hidden d-flex">
-                        <img src="./assets/capcake.jpg" alt="" class="w-full h-full object-cover">
+                        <img src="./assets/capcake.jpg" alt="" class="w-full h-full object-cover rounded-0">
                     </div>
                     <div class="col right-content d-flex flex-column text-white gap-4">
                         <div class="featured__title">
-                            <h3>Featured offers</h3>
-                            <h1>Just For You</h1>
+                            <h3 style="letter-spacing:0.15em; font-size:20px">FEATURED OFFERS</h3>
+                            <h2><em>Just For You</em></h2>
                         </div>
                         <h2>Breakfast Pancakes</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis fuga ab 
-                            eos reiciendis necessitatibus animi ipsam doloribus commodi aspernatur sint
-                             assumenda ducimus possimus temporibus perferendis consequuntur vero, laboriosam
-                              illum blanditiis!</p>
-                        <button class="btn btn__offers text-white w-25">See offers</button>
+                        <p>Get your FREE complimentary breakfast from our Patio Bayangan on your first stay! 
+                            You may also ask  room service to have it served for you.</p>
+                        <button class="btn btn__offers text-white w-25 rounded-0">SEE OFFERS</button>
 
                         <div>
-                            <p>*Website exclusive. Cannot be combined with any other offer. Subject to availability.</p>
+                            <p style="font-size:12px">*Website exclusive. Cannot be combined with any other offer. Subject to availability.</p>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>-->
-        <section class="rooms">
-            <div class="container">
-                <div class="rooms-content d-flex flex-column justify-content-center gap-4">
-                    <div class="title col-lg-3">
-                        <h3>Rooms and villas</h3>
-                        <h1>Comfort away from home</h1>
-                    </div>
-                    <div class="col-lg-8">
-                        <p class="text-center text-lg-start">Indulge yourself and relax in the comfiest rooms by the sea. Breathe deep with the crisp sea breeze as you enjoy unparalleled views of sunrise and sunsets.</p>
-                    </div>
-                    <button class="btn btn_view rounded-0">BOOK ROOMS</button>
                 </div>
             </div>
         </section>
@@ -150,22 +156,23 @@
                 <div class="swiper-wrapper ourGuest__content ">
                     <!-- text-center d-flex flex-column justify-content-center align-items-center -->
                     <div class="swiper-slide slide-1 text-center d-flex flex-column justify-content-center align-items-center">
-                        <p class="title">Our guests say it best</p>
-                        <h1>“Elegant rooms, outstanding services”</h1>
-                        <p>“The rooms are elegant, the views are spectacular, and the service was outstanding”</p>
-                        <p>-Blessed Bagor, on Facebook Review</p>
+                        <p class="title" style="letter-spacing:0.15em; font-size:20px mt-5">OUR GUESTS SAY IT BEST</p>
+                        <h2><em>“Indulge in sophistication and unparalleled hospitality with our stylish rooms and service.”</em></h2>
+                        <p>“Experience elegance, stunning ocean views, and outstanding service at our hotel. 
+                            Our rooms are impeccably designed, the ocean views are breathtaking, and our staff will cater to your every need.”</p>
+                        <p>-Mark, on Google Review</p>
                     </div>
                     <div class="swiper-slide slide-2 text-center d-flex flex-column justify-content-center align-items-center">
-                        <p class="title">Hi</p>
-                        <h1>“Elegant rooms, outstanding services”</h1>
-                        <p>“The rooms are elegant, the views are spectacular, and the service was outstanding”</p>
-                        <p>-Blessed Bagor, on Facebook Review</p>
+                        <p class="title" style="letter-spacing:0.15em; font-size:20px mt-5">OUR GUESTS SAY IT BEST</p>
+                        <h2><em>“Subpar customer service!”</em></h2>
+                        <p>"Look no more. Our high-quality solution is just what you've been searching for."</p>
+                        <p>-Alisha, on TripAdvisor</p>
                     </div>
                     <div class="swiper-slide slide-3 text-center d-flex flex-column justify-content-center align-items-center">
-                        <p class="title">heheh</p>
-                        <h1>“Elegant rooms, outstanding services”</h1>
-                        <p>“The rooms are elegant, the views are spectacular, and the service was outstanding”</p>
-                        <p>-Blessed Bagor, on Facebook Review</p>
+                        <p class="title" style="letter-spacing:0.15em; font-size:20px mt-5">OUR GUESTS SAY IT BEST</p>
+                        <h2><em>“A charming beach hotel”</em></h2>
+                        <p>“Bayangan Hotel and Beach Resort is a cozy, charming beach hotel. The people are wonderful and couldn't be more helpful.”</p>
+                        <p>-Amaya, on Facebook Review</p>
                     </div>
                 </div>
                 <div class="swiper-button-next"></div>
@@ -199,14 +206,14 @@
             <div class="container">
                 <div class="location_content d-flex flex-column justify-content-center gap-4">
                     <div class="title">
-                        <h3 class="text-center text-lg-start">Location</h3>
+                        <h3 class="text-center text-lg-start" style="letter-spacing:0.15em; font-size:20px">LOCATION</h3>
                         <h1 class="text-center text-lg-start">See Zamboanga del Norte</h1>
                     </div>
                     <div>
                         <p class="text-center text-lg-start">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est veritatis
-                             asperiores, delectus accusamus aut esse consectetur nisi, debitis quibusdam,
-                              laborum unde atque excepturi maxime. Laboriosam, illum quia culpa quasi 
-                              doloremque iusto aperiam placeat omnis, obcaecati quae, fuga labore rem veniam?</p>
+                            asperiores, delectus accusamus aut esse consectetur nisi, debitis quibusdam,
+                            laborum unde atque excepturi maxime. Laboriosam, illum quia culpa quasi
+                            doloremque iusto aperiam placeat omnis, obcaecati quae, fuga labore rem veniam?</p>
                     </div>
                     <button class="btn btn__explore rounded-0">Explore</button>
                 </div>
@@ -221,7 +228,7 @@
                     </div>
                     <div class="col-6 col-md overflow-hidden d-flex justify-content-center align-items-center p-0 2nd_col">
                         <div class="d-flex flex-column justify-content-center align-items-center">
-                            <div class="title">Gallery</div>
+                            <div class="title" style="letter-spacing:0.15em; font-size:20px">GALLERY</div>
                             <h1>Catch a Glimpse</h1>
                             <button class="btn btn__seemore rounded-0">SEE MORE</button>
                         </div>
@@ -238,9 +245,9 @@
     </main>
 
 
-   <?php
-        require('./components/footer.php')
-   ?>
+    <?php
+    require('./components/footer.php')
+    ?>
 
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
@@ -259,4 +266,5 @@
         });
     </script>
 </body>
+
 </html>
