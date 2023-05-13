@@ -605,13 +605,13 @@ require('../admin/script.php')
             xhr.onload = function()
             {
                 if(this.responseText == 'inv_img'){
-                    alert('error','Only JPG, WEBP or PNG images are allowed!');
+                    alert('error','Only JPG, WEBP or PNG images are allowed!','image-alert');
                 }
                 else if(this.responseText == 'inv_size'){
-                    alert('error','Image should be less than 2MB!');
+                    alert('error','Image should be less than 2MB!','image-alert');
                 }
                 else if(this.responseText == 'upd_failed'){
-                    alert('error','Image upload failed. Server down!');
+                    alert('error','Image upload failed. Server down!','image-alert');
                 }
                 else{
                     alert('success','New image added!','image-alert');
@@ -640,6 +640,30 @@ require('../admin/script.php')
 
             xhr.send('get_room_images='+id);
 
+        }
+
+        function rem_image(img_id,room_id)
+        {
+            let data = new FormData();
+
+            data.append('image_id',img_id);
+            data.append('room_id',room_id);
+            data.append('rem_image','');
+
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST","ajax/rooms.php", true);
+
+            xhr.onload = function()
+            {
+                if(this.responseText == 1){
+                    alert('success','Image removed!','image-alert');
+                    room_images(room_id,document.querySelector('#room-images .modal-title').innerText);
+                }
+                else{
+                    alert('error','Image removal failed!','image-alert');
+                }
+            }
+            xhr.send(data);
         }
 
         window.onload = function() {

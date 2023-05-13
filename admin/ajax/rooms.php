@@ -231,10 +231,10 @@ if (isset($_POST['get_room_images'])) {
     {
         echo <<<data
             <tr class='align-middle'>
-                <td><img src='$path$row[image]' style='width: 100px' class=''img-fluid></td>
+                <td><img src='$path$row[image]' style='width: 100px' class='img-fluid'></td>
                 <td>thumb</td>
                 <td>
-                    <button class='btn' onclick='' btn-sm shadow-none' style='background-color: red; color: #fff;'>
+                    <button class='btn btn-sm shadow-none' onclick='rem_image($row[id],$row[room_id])' style='background-color: red; color: #fff;'>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                         <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
                         <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
@@ -243,5 +243,25 @@ if (isset($_POST['get_room_images'])) {
                 </td>
             </tr>
         data;
+    }
+}
+
+if(isset($_POST['rem_image']))
+{
+    $form_data = filteration($_POST);
+
+    $values = [$form_data['image_id'],$form_data['room_id']];
+
+    $pre_q = "SELECT * FROM `room_images` WHERE `id`=? AND `room_id`=?";
+    $res = select($pre_q,$values,'ii');
+    $img = mysqli_fetch_assoc($res);
+
+    if(deleteImage($img['image'],ROOMS_FOLDER)){
+        $query = "DELETE FROM `room_images` WHERE `id`=? AND `room_id`=?";
+        $res = delete($query,$values,'ii');
+        echo $res;
+    }
+    else{
+        echo 0;
     }
 }
