@@ -19,7 +19,7 @@
                         <div class="p-5 d-flex flex-column gap-3 text-center justify-content-center align-items-center">
                             <div class="logo">
                                 <a href="/index.php" class="logo">
-                                    <img src="../assets/Bayangan Hotel Logo.png" alt="" width="140" height="150">
+                                    <img src="./assets/Bayangan Hotel Logo.png" alt="" width="140" height="150">
                                 </a>
                             </div>
                             <?php
@@ -66,11 +66,11 @@
                                     <ul class="list-unstyled">
                                         <h4 class="hotel_footer">HOTEL RESERVATIONS</h4>
                                         <li class="nav-item d-flex gap-2">
-                                            <img src="../assets/telephone-fill.svg" alt="telephone_graphic">
+                                            <img src="./assets/telephone-fill.svg" alt="telephone_graphic">
                                             <a href="#" class="nav-link ps-4">1111-222-333</a>
                                         </li>
                                         <li class="nav-item d-flex gap-2">
-                                            <img src="../assets/envelope-fill.svg" alt="envelope_graphic">
+                                            <img src="./assets/envelope-fill.svg" alt="envelope_graphic">
                                             <a href="#" class="nav-link ps-4">bayangan@example.com</a>
                                         </li>
                                     </ul>
