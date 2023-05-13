@@ -110,7 +110,7 @@
     background: var(--pink-bg);
 }
 .ourGuest__content{
-    height: 80vh;
+    height: 50vh;
     color: var(--blue-bg);
 }
 .slide-1{
@@ -126,7 +126,7 @@
 /*-------------rooms styling---------------*/
 
 .rooms{
-    background: linear-gradient(to right,white,transparent),url('../assets/Confortroom.jpg');
+    background: linear-gradient(to right,#FEFAE0,transparent),url('../assets/DR_2.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -183,6 +183,12 @@
 .location_content{
     min-height: 100vh;
 }
+
+.location_content .title{
+    border-left: 6px solid var(--orange);
+    padding-left: .6rem;
+}
+
 .btn__explore{
     background: var(--orange);
     color: var(--pink-bg);
@@ -216,12 +222,14 @@
     font-size: 11px;
 }
 .footer .plan_footer{
-    border-left: 6px solid var(--orange);
-    padding-left: .6rem;
+    border-left: 5px solid var(--orange);
+    color:#FEFAE0;
+    padding-left: .8rem;
 }
 .footer .hotel_footer{
-    border-left: 6px solid var(--orange);
-    padding-left: .6rem;
+    border-left: 5px solid var(--orange);
+    color:#FEFAE0;
+    padding-left: .8rem;
 }
 .plan li a{
     color: var(--pink-bg);
