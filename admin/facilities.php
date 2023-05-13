@@ -156,7 +156,7 @@ if (isset($_GET['del'])) {
             <div class="details shadow-sm">
                 <div class="recentOrders">
                     <div class="cardHeader">
-                        <h2>Facilities</h2>
+                        <h2>Feature</h2>
                     </div>
                     <div class="mb-2 d-flex align-items-center justify-content-end">
                         <button type="button" class="btn btn-dark shadow-none btn-sm" data-bs-toggle="modal" data-bs-target="#feature-settings">
