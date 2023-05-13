@@ -239,6 +239,108 @@ adminLogin();
                         </form>
                     </div>
                 </div>
+
+                <!-------------edit Room modal-------------->
+
+                <div class="modal fade" id="edit-room-settings" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1">
+                    <div class="modal-dialog modal-lg">
+                        <form action="" id="add_room_form" autocomplete="off">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Edit Room</h5>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label fw-semibold">Name</label>
+                                            <input type="text" name="name" class="form-control shadow-none" required>
+                                        </div>
+
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label fw-semibold">Area</label>
+                                            <input type="number" min="1" name="area" class="form-control shadow-none" required>
+                                        </div>
+
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label fw-semibold">Price</label>
+                                            <input type="number" min="1" name="price" class="form-control shadow-none" required>
+                                        </div>
+
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label fw-semibold">Quantity</label>
+                                            <input type="number" min="1" name="quantity" class="form-control shadow-none" required>
+                                        </div>
+
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label fw-semibold">Adult (Max.)</label>
+                                            <input type="number" min="1" name="adult" class="form-control shadow-none" required>
+                                        </div>
+
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label fw-semibold">Children (Max.)</label>
+                                            <input type="number" min="1" name="children" class="form-control shadow-none" required>
+                                        </div>
+                                        <div class="col-md-12 mb-3">
+                                            <label class="form-label fw-semibold">Feature</label>
+                                            <div class="row">
+                                                <?php
+                                                    $res = selectAll('features');
+
+                                                    while($opt = mysqli_fetch_assoc($res)){
+                                                        echo "
+                                                            <div class='col-md-3 mb-1'>
+                                                                <label>
+                                                                    <input type='checkbox' name='features' value='$opt[id]' class='form-check-input shadow-none'>
+                                                                    $opt[name]
+                                                                </label>
+                                                            </div>
+                                                        ";
+                                                    }
+                                                ?>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12 mb-3">
+                                            <label class="form-label fw-semibold">Facilities</label>
+                                            <div class="row">
+                                                <?php
+                                                    $res = selectAll('facilities');
+
+                                                    while($opt = mysqli_fetch_assoc($res)){
+                                                        echo "
+                                                            <div class='col-md-3 mb-1'>
+                                                                <label>
+                                                                    <input type='checkbox' name='facilities' value='$opt[id]' class='form-check-input shadow-none'>
+                                                                    $opt[name]
+                                                                </label>
+                                                            </div>
+                                                        ";
+                                                    }
+                                                ?>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 mb-3">
+                                            <label class="form-label fw-bold">Description</label>
+                                            <textarea name="desc" rows="4" class="form-control shadow-none" required></textarea>
+                                        </div>
+
+                                        <input type="hidden" name=''>
+                                        
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">
+                                        Cancel
+                                    </button>
+                                    <button type="submit" class="btn btn-primary">
+                                        Submit
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
 
 
@@ -260,7 +362,7 @@ adminLogin();
         add_room_form.addEventListener('submit', function(e) {
             e.preventDefault();
             add_rooms();
-        })
+        });
 
         function add_rooms() {
             let data = new FormData();
@@ -277,136 +379,79 @@ adminLogin();
 
             add_room_form.elements['features'].forEach(el => {
                 if(el.checked){
-                    console.log(el.value);
+                    features.push(el.value)
                 }
-            })
+            });
 
-            // let xhr = new XMLHttpRequest();
-            // xhr.open("POST", "ajax/features.php", true);
+            let facilities = [];
 
-            // xhr.onload = function() {
-            //     var myModal = document.getElementById('feature-settings');
-            //     var modal = bootstrap.Modal.getInstance(myModal);
-            //     modal.hide();
+            add_room_form.elements['facilities'].forEach(el => {
+                if(el.checked){
+                    facilities.push(el.value)
+                }
+            });
 
-            //     if (this.responseText == 1) {
-            //         alert('success', 'New member added!');
-            //         feature_settings_form.elements['feature_name'].value = '';
-            //         get_features();
-            //     } else {
-            //         alert('error', 'server down!')
-            //     }
+            data.append('features', JSON.stringify(features));
+            data.append('facilities', JSON.stringify(facilities));
 
-            // }
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "ajax/rooms.php", true);
 
-            // xhr.send(data);
+            xhr.onload = function() {
+                var myModal = document.getElementById('add-room-settings');
+                var modal = bootstrap.Modal.getInstance(myModal);
+                modal.hide();
+
+                if (this.responseText == 1) {
+                    alert('success', 'New room added!');
+                    add_room_form.reset();
+                    get_all_rooms();
+                    
+                } else {
+                    alert('error', 'server down!')
+                }
+
+            }
+
+            xhr.send(data);
         }
 
-        // function get_features() {
-        //     let xhr = new XMLHttpRequest();
-        //     xhr.open("POST", "ajax/features.php", true);
-        //     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        function get_all_rooms()
+        {
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "ajax/rooms.php", true);
+            xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
 
-        //     xhr.onload = function() {
-        //         document.getElementById('feature-data').innerHTML = this.responseText;
-        //     }
+            xhr.onload = function() {
+                document.getElementById('room-data').innerHTML = this.responseText;
 
-        //     xhr.send('get_features');
-        // }
+            }
 
-        // function rem_feature(val) {
-        //     let xhr = new XMLHttpRequest();
-        //     xhr.open("POST", "ajax/features.php", true);
-        //     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.send('get_all_rooms');
+        }
 
-        //     xhr.onload = function() {
-        //         if (this.responseText == 1) {
-        //             alert('success', 'Feature removed!');
-        //             get_features();
-        //         } else if (this.responseText == 'room added') {
-        //             alert('error', 'Feature is added in room!')
-        //         } else {
-        //             alert('error', 'Server down!');
-        //         }
-        //     }
+        function toggle_status(id,val)
+        {
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "ajax/rooms.php", true);
+            xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
 
-        //     xhr.send('rem_feature=' + val);
-        // }
+            xhr.onload = function() {
+                if(this.responseText == 1){
+                    alert('success', 'Status toggled!');
+                    get_all_rooms();
+                }
+                else{
+                    alert('error', 'Server down')
+                }
+            }
 
-        // facility_settings_form.addEventListener('submit', function(e) {
-        //     e.preventDefault();
-        //     add_facility();
-        // })
+            xhr.send('toggle_status='+id+'&value='+val);
+        }
 
-        // function add_facility() {
-        //     let data = new FormData();
-        //     data.append('name', facility_settings_form.elements['facility_name'].value);
-        //     data.append('icon', facility_settings_form.elements['facility_icon'].files[0]);
-        //     data.append('desc', facility_settings_form.elements['facility_desc'].value);
-        //     data.append('add_facility', '');
-
-
-        //     let xhr = new XMLHttpRequest();
-        //     xhr.open("POST", "ajax/features.php", true);
-
-        //     xhr.onload = function() {
-        //         var myModal = document.getElementById('facility-settings');
-        //         var modal = bootstrap.Modal.getInstance(myModal);
-        //         modal.hide();
-
-        //         if (this.responseText == 'inv_img') {
-        //             alert('error', 'Only SVG images are allowed!');
-        //         } else if (this.responseText == 'inv_size') {
-        //             alert('error', 'Image should be less than 1MB!');
-        //         } else if (this.responseText == 'upd_failed') {
-        //             alert('error', 'Image upload failed. Server down!');
-        //         } else {
-        //             alert('success', 'New facility added!');
-        //             facility_settings_form.reset();
-        //             get_facilities();
-        //         }
-
-        //     }
-
-        //     xhr.send(data);
-        // }
-
-        // function get_facilities() {
-        //     let xhr = new XMLHttpRequest();
-        //     xhr.open("POST", "ajax/features.php", true);
-        //     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-        //     xhr.onload = function() {
-        //         document.getElementById('facilities-data').innerHTML = this.responseText;
-        //     }
-
-        //     xhr.send('get_facilities');
-        // }
-
-        // function rem_facility(val) {
-        //     let xhr = new XMLHttpRequest();
-        //     xhr.open("POST", "ajax/features.php", true);
-        //     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-        //     xhr.onload = function() {
-        //         if (this.responseText == 1) {
-        //             alert('success', 'Facility removed!');
-        //             get_facilities();
-        //         } else if (this.responseText == 'room added') {
-        //             alert('error', 'Facility is added in room!')
-        //         } else {
-        //             alert('error', 'Server down!');
-        //         }
-        //     }
-
-        //     xhr.send('rem_facility=' + val);
-        // }
-
-
-        // window.onload = function() {
-        //     get_features();
-        //     get_facilities();
-        // }
+        window.onload = function(){
+            get_all_rooms();
+        }
     </script>
 </body>
 
