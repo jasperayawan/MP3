@@ -2,49 +2,6 @@
 require('../admin/essentials.php');
 require('../admin/db_config.php');
 adminLogin();
-
-if (isset($_GET['seen'])) {
-    $form_data = filteration($_GET);
-
-    if ($form_data['seen'] == 'all') {
-        $query = "UPDATE `user_queries` SET `seen`=?";
-        $values = [1];
-        if (update($query, $values, 'i')) {
-            alert('success', 'Marked all as read.');
-        } else {
-            alert('error', 'failed');
-        }
-    } else {
-        $query = "UPDATE `user_queries` SET `seen`=? WHERE `id`=?";
-        $values = [1, $form_data['seen']];
-        if (update($query, $values, 'ii')) {
-            alert('success', 'Marked as read.');
-        } else {
-            alert('error', 'failed');
-        }
-    }
-}
-
-if (isset($_GET['del'])) {
-    $form_data = filteration($_GET);
-
-    if ($form_data['del'] == 'all') {
-        $query = "DELETE FROM `user_queries`";
-        if (mysqli_query($conn, $query)) {
-            alert('success', 'All Message deleted!');
-        } else {
-            alert('error', 'failed');
-        }
-    } else {
-        $query = "DELETE FROM `user_queries` WHERE `id`=?";
-        $values = [$form_data['del']];
-        if (delete($query, $values, 'i')) {
-            alert('success', 'Message deleted!');
-        } else {
-            alert('error', 'failed');
-        }
-    }
-}
 ?>
 
 <!DOCTYPE html>
@@ -54,7 +11,7 @@ if (isset($_GET['del'])) {
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin - Dashboard</title>
+    <title>Room - Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/3ce7f5ba6a.js" crossorigin="anonymous"></script>
@@ -151,80 +108,141 @@ if (isset($_GET['del'])) {
 
 
 
-            <!----------order details list------->
+            <!----------features------->
 
-            <div class="px-4 px-lg-5 py-lg-5">
-                <div class="text-end py-2">
-                    <button type="button" class="btn btn-dark shadow-none btn-sm" data-bs-toggle="modal" data-bs-target="#add-room">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square" viewBox="0 0 16 16">
-                            <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
-                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
-                        </svg> Add</button>
+            <div class="details shadow-sm">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>Room</h2>
+                    </div>
+                    <div class="mb-2 d-flex align-items-center justify-content-end">
+                        <button type="button" class="btn btn-dark shadow-none btn-sm" data-bs-toggle="modal" data-bs-target="#add-room-settings">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square" viewBox="0 0 16 16">
+                                <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                            </svg> Add</button>
+                    </div>
+                    <table>
+                        <thead style="background-color: #1A5F7A;">
+                            <tr>
+                                <td class="fw-bold text-white">id</td>
+                                <td class="fw-bold text-white">Name</td>
+                                <td class="fw-bold text-white">Area</td>
+                                <td class="fw-bold text-white">Guests</td>
+                                <td class="fw-bold text-white">Price</td>
+                                <td class="fw-bold text-white">Quantity</td>
+                                <td class="fw-bold text-white">Status</td>
+                                <td class="fw-bold text-white">Action</td>
+                            </tr>
+                        </thead>
+                        <tbody id="room-data">
+                        </tbody>
+                    </table>
                 </div>
-                <table class="table table-hover">
-                    <thead style="background-color: #1A5F7A;">
-                        <tr>
-                            <td class="fw-bold text-white">id</td>
-                            <td class="fw-bold text-white">Name</td>
-                            <td class="fw-bold text-white">Area Guest</td>
-                            <td class="fw-bold text-white">Price</td>
-                            <td class="fw-bold text-white">Quantity</td>
-                            <td class="fw-bold text-white">Status</td>
-                        </tr>
-                    </thead>
-                    <tbody id="room-data">
 
-                    </tbody>
-                </table>
-            </div>
+                <!-------------Room modal-------------->
 
-            <!-----add room modal---->
+                <div class="modal fade" id="add-room-settings" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1">
+                    <div class="modal-dialog modal-lg">
+                        <form action="" id="add_room_form" autocomplete="off">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Add Room</h5>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label fw-semibold">Name</label>
+                                            <input type="text" name="name" class="form-control shadow-none" required>
+                                        </div>
 
-            <div class="modal fade" id="add-room" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1">
-                <div class="modal-dialog modal-lg">
-                    <form id="add_room_form" autocomplete="off">
-                        <div class="modal-content">
-                            <div class="modal-header d-flex justify-content-between align-items-center">
-                                <h5 class="modal-title text-dark">Add Room</h5>
-                                <button class="btn btn-close" data-bs-dismiss="modal"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="row">
-                                    <div class="col-md-6 mb-3">
-                                        <label for="" class="form-label fw-bold">Name</label>
-                                        <input type="text" name="name" class="form-control shadow-none" required>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label for="" class="form-label fw-bold">Area</label>
-                                        <input type="number" min="1" name="area" class="form-control shadow-none" required>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label for="" class="form-label fw-bold">Price</label>
-                                        <input type="number" min="1" name="price" class="form-control shadow-none" required>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label for="" class="form-label fw-bold">Quantity</label>
-                                        <input type="number" min="1" name="quantity" class="form-control shadow-none" required>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label for="" class="form-label fw-bold">Adult (Max.)</label>
-                                        <input type="number" min="1" name="adult" class="form-control shadow-none" required>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label for="" class="form-label fw-bold">Children (Max.)</label>
-                                        <input type="number" min="1" name="children" class="form-control shadow-none" required>
-                                    </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label fw-semibold">Area</label>
+                                            <input type="number" min="1" name="area" class="form-control shadow-none" required>
+                                        </div>
 
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label fw-semibold">Price</label>
+                                            <input type="number" min="1" name="price" class="form-control shadow-none" required>
+                                        </div>
+
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label fw-semibold">Quantity</label>
+                                            <input type="number" min="1" name="quantity" class="form-control shadow-none" required>
+                                        </div>
+
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label fw-semibold">Adult (Max.)</label>
+                                            <input type="number" min="1" name="adult" class="form-control shadow-none" required>
+                                        </div>
+
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label fw-semibold">Children (Max.)</label>
+                                            <input type="number" min="1" name="children" class="form-control shadow-none" required>
+                                        </div>
+                                        <div class="col-md-12 mb-3">
+                                            <label class="form-label fw-semibold">Feature</label>
+                                            <div class="row">
+                                                <?php
+                                                    $res = selectAll('features');
+
+                                                    while($opt = mysqli_fetch_assoc($res)){
+                                                        echo "
+                                                            <div class='col-md-3 mb-1'>
+                                                                <label>
+                                                                    <input type='checkbox' name='features' value='$opt[id]' class='form-check-input shadow-none'>
+                                                                    $opt[name]
+                                                                </label>
+                                                            </div>
+                                                        ";
+                                                    }
+                                                ?>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12 mb-3">
+                                            <label class="form-label fw-semibold">Facilities</label>
+                                            <div class="row">
+                                                <?php
+                                                    $res = selectAll('facilities');
+
+                                                    while($opt = mysqli_fetch_assoc($res)){
+                                                        echo "
+                                                            <div class='col-md-3 mb-1'>
+                                                                <label>
+                                                                    <input type='checkbox' name='facilities' value='$opt[id]' class='form-check-input shadow-none'>
+                                                                    $opt[name]
+                                                                </label>
+                                                            </div>
+                                                        ";
+                                                    }
+                                                ?>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 mb-3">
+                                            <label class="form-label fw-bold">Description</label>
+                                            <textarea name="desc" rows="4" class="form-control shadow-none" required></textarea>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">
+                                        Cancel
+                                    </button>
+                                    <button type="submit" class="btn btn-primary">
+                                        Submit
+                                    </button>
                                 </div>
                             </div>
-                            <div class="modal-footer">
-                                <button class="btn btn-primary" data-bs-dismiss="modal">Cancel</button>
-                                <button class="btn btn-secondary" type="submit">Submit</button>
-                            </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
+
+
+
         </div>
     </div>
 
@@ -235,8 +253,9 @@ if (isset($_GET['del'])) {
     <!-----------icon script----->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
     <script>
-        let add_room_form = document.getElementById('add_room_form')
+        let add_room_form = document.getElementById('add_room_form');
 
         add_room_form.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -245,32 +264,149 @@ if (isset($_GET['del'])) {
 
         function add_rooms() {
             let data = new FormData();
-            data.append('add_rooms', '');
+            data.append('add_room', '');
             data.append('name', add_room_form.elements['name'].value);
             data.append('area', add_room_form.elements['area'].value);
             data.append('price', add_room_form.elements['price'].value);
             data.append('quantity', add_room_form.elements['quantity'].value);
             data.append('adult', add_room_form.elements['adult'].value);
             data.append('children', add_room_form.elements['children'].value);
+            data.append('desc', add_room_form.elements['desc'].value);
 
-            let xhr = new XMLHttpRequest();
-            xhr.open("POST", "ajax/rooms.php", true);
+            let features = [];
 
-            xhr.onload = function() {
-                var myModal = document.getElementById('add-room');
-                var modal = bootstrap.Modal.getInstance(myModal);
-                modal.hide();
-                if (this.responseText == 1) {
-                    alert('success', 'new room added!');
-                    add_room_form.reset();
-
-                } else {
-                    alert('error', 'Server down!');
+            add_room_form.elements['features'].forEach(el => {
+                if(el.checked){
+                    console.log(el.value);
                 }
-            }
+            })
 
-            xhr.send(data);
+            // let xhr = new XMLHttpRequest();
+            // xhr.open("POST", "ajax/features.php", true);
+
+            // xhr.onload = function() {
+            //     var myModal = document.getElementById('feature-settings');
+            //     var modal = bootstrap.Modal.getInstance(myModal);
+            //     modal.hide();
+
+            //     if (this.responseText == 1) {
+            //         alert('success', 'New member added!');
+            //         feature_settings_form.elements['feature_name'].value = '';
+            //         get_features();
+            //     } else {
+            //         alert('error', 'server down!')
+            //     }
+
+            // }
+
+            // xhr.send(data);
         }
+
+        // function get_features() {
+        //     let xhr = new XMLHttpRequest();
+        //     xhr.open("POST", "ajax/features.php", true);
+        //     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+        //     xhr.onload = function() {
+        //         document.getElementById('feature-data').innerHTML = this.responseText;
+        //     }
+
+        //     xhr.send('get_features');
+        // }
+
+        // function rem_feature(val) {
+        //     let xhr = new XMLHttpRequest();
+        //     xhr.open("POST", "ajax/features.php", true);
+        //     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+        //     xhr.onload = function() {
+        //         if (this.responseText == 1) {
+        //             alert('success', 'Feature removed!');
+        //             get_features();
+        //         } else if (this.responseText == 'room added') {
+        //             alert('error', 'Feature is added in room!')
+        //         } else {
+        //             alert('error', 'Server down!');
+        //         }
+        //     }
+
+        //     xhr.send('rem_feature=' + val);
+        // }
+
+        // facility_settings_form.addEventListener('submit', function(e) {
+        //     e.preventDefault();
+        //     add_facility();
+        // })
+
+        // function add_facility() {
+        //     let data = new FormData();
+        //     data.append('name', facility_settings_form.elements['facility_name'].value);
+        //     data.append('icon', facility_settings_form.elements['facility_icon'].files[0]);
+        //     data.append('desc', facility_settings_form.elements['facility_desc'].value);
+        //     data.append('add_facility', '');
+
+
+        //     let xhr = new XMLHttpRequest();
+        //     xhr.open("POST", "ajax/features.php", true);
+
+        //     xhr.onload = function() {
+        //         var myModal = document.getElementById('facility-settings');
+        //         var modal = bootstrap.Modal.getInstance(myModal);
+        //         modal.hide();
+
+        //         if (this.responseText == 'inv_img') {
+        //             alert('error', 'Only SVG images are allowed!');
+        //         } else if (this.responseText == 'inv_size') {
+        //             alert('error', 'Image should be less than 1MB!');
+        //         } else if (this.responseText == 'upd_failed') {
+        //             alert('error', 'Image upload failed. Server down!');
+        //         } else {
+        //             alert('success', 'New facility added!');
+        //             facility_settings_form.reset();
+        //             get_facilities();
+        //         }
+
+        //     }
+
+        //     xhr.send(data);
+        // }
+
+        // function get_facilities() {
+        //     let xhr = new XMLHttpRequest();
+        //     xhr.open("POST", "ajax/features.php", true);
+        //     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+        //     xhr.onload = function() {
+        //         document.getElementById('facilities-data').innerHTML = this.responseText;
+        //     }
+
+        //     xhr.send('get_facilities');
+        // }
+
+        // function rem_facility(val) {
+        //     let xhr = new XMLHttpRequest();
+        //     xhr.open("POST", "ajax/features.php", true);
+        //     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+        //     xhr.onload = function() {
+        //         if (this.responseText == 1) {
+        //             alert('success', 'Facility removed!');
+        //             get_facilities();
+        //         } else if (this.responseText == 'room added') {
+        //             alert('error', 'Facility is added in room!')
+        //         } else {
+        //             alert('error', 'Server down!');
+        //         }
+        //     }
+
+        //     xhr.send('rem_facility=' + val);
+        // }
+
+
+        // window.onload = function() {
+        //     get_features();
+        //     get_facilities();
+        // }
     </script>
 </body>
 
