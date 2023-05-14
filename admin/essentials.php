@@ -14,6 +14,12 @@
     define('ABOUT_FOLDER','about/');
     define('FACILITIES_FOLDER','facilities/');
     define('ROOMS_FOLDER','rooms/');
+    define('USERS_FOLDER','users/');
+
+    //send grid api key
+
+    define('SENDGRID_API_KEY',"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");
+
 
 
     function adminLogin(){
@@ -113,6 +119,41 @@
 
             $img_path = UPLOAD_IMAGE_PATH.$folder.$randomName;
             if(move_uploaded_file($image['tmp_name'],$img_path)){
+                return $randomName;
+            }
+            else{
+                return 'upd_failed';
+            }
+        }
+    }
+
+    function uploadUserImage($image)
+    {
+        $valid_mime = ['image/jpeg','image/png','image/webp'];
+        $img_mime = $image['type'];
+
+        if(!in_array($img_mime,$valid_mime)){
+
+            //invalid image mime or format
+            return 'inv_img';
+        }
+        else{
+            $extention = pathinfo($image['name'],PATHINFO_EXTENSION);
+            $randomName = 'IMG_'.random_int(11111,99999).".jpeg";
+
+            $img_path = UPLOAD_IMAGE_PATH.USERS_FOLDER.$randomName;
+
+            if($extention == 'png' || $extention == 'PNG'){
+                $img = imagecreatefrompng($image['tmp_name']);
+            }
+            else if($extention == 'webp' || $extention == 'WEBP'){
+                $img = imagecreatefromwebp($image['tmp_name']);
+            }
+            else{
+                $img = imagecreatefromjpeg($image['tmp_name']);
+            }
+
+            if(imagejpeg($img,$img_path,75)){
                 return $randomName;
             }
             else{

@@ -692,27 +692,26 @@ require('../admin/script.php')
 
         function remove_room(room_id)
         {
-            if(confirm("Are you sure you want to delet this room?"))
+            if(confirm("Are you sure you want to delete this room?"))
             {
                 let data = new FormData();
                 data.append('room_id',room_id);
                 data.append('remove_room','');
 
                 let xhr = new XMLHttpRequest();
-            xhr.open("POST","ajax/rooms.php", true);
+                xhr.open("POST","ajax/rooms.php", true);
 
-            xhr.onload = function()
-            {
-                if(this.responseText == 1){
-                    alert('success','Room removed!');
-                    get_all_rooms();
-
+                xhr.onload = function()
+                {
+                    if(this.responseText == 1){
+                        alert('success','Room removed!');
+                        get_all_rooms();
+                    }
+                    else{
+                        alert('error','Room removal failed!');
+                    }
                 }
-                else{
-                    alert('error','Room removal failed!');
-                }
-            }
-            xhr.send(data);
+                xhr.send(data);
             }
             
         }
