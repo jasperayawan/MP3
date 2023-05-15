@@ -40,7 +40,7 @@
 
         //check user if exist or not
 
-        $user_exist = select("SELECT * FROM `user_cred` WHERE `email`=? AND `phone_number`=? LIMIT 1", 
+        $user_exist = select("SELECT * FROM `user_cred` WHERE `email`=? OR `phone_number`=? LIMIT 1", 
         [$data['email'],$data['phone_number']],'ss');
 
         if(mysqli_num_rows($user_exist)!=0){
