@@ -294,16 +294,16 @@ adminLogin();
 
             xhr.onload = function() {
                 if (this.responseText == 1) {
-                    alert('success', 'Feature removed!');
+                    alert('success','Feature removed!');
                     get_features();
-                } else if (this.responseText == 'room added') {
-                    alert('error', 'Feature is added in room!')
+                } else if (this.responseText=='room_added') {
+                    alert('error','Feature is added in room!')
                 } else {
-                    alert('error', 'Server down!');
+                    alert('error','Server down!');
                 }
             }
 
-            xhr.send('rem_feature=' + val);
+            xhr.send('rem_feature='+val);
         }
 
         facility_settings_form.addEventListener('submit', function(e) {

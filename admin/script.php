@@ -1,11 +1,11 @@
 <script>
-    function alert(type,msg)
+    function alert(type,msg,position='body')
     {
         let bs_class = (type == 'success') ? 'alert-success' : 'alert-danger';
         let element = document.createElement('div');
 
         element.innerHTML = `
-                    <div class="alert ${bs_class} alert-dismissable fade show custom-alert d-flex justify-content-between align-items-center" role="alert">
+                    <div class="alert ${bs_class} alert-dismissable fade show d-flex justify-content-between align-items-center" role="alert">
                         <strong class="me-3">${msg}</strong> 
                         <button 
                             type="button" 
@@ -15,11 +15,17 @@
                         </button>
                     </div>
         `;
-        document.body.append(element);
-        setTimeout(remAlert, 2000);
+
+        if(position == 'body'){
+            document.body.append(element);
+            element.classList.add('custom-alert');
+        }
+        else{
+            document.getElementById(position).appendChild(element)
+        }
+
+        
     }
 
-    function remAlert(){
-        document.getElementById('alert')[0].remove();
-    }
+    
 </script>
