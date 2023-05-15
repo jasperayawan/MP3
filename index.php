@@ -153,7 +153,7 @@ require('./admin/essentials.php')
         <!---carousel-->
         <section class="ourGuest">
             <div class="container swiper swiper-container">
-                <div class="swiper-wrapper ourGuest__content ">
+                <div class= "swiper-wrapper ourGuest__content ">
                     <!-- text-center d-flex flex-column justify-content-center align-items-center -->
                     <div class="swiper-slide slide-1 text-center d-flex flex-column justify-content-center align-items-center">
                         <p class="title" style="letter-spacing:0.15em; font-size:20px mt-5">OUR GUESTS SAY IT BEST</p>

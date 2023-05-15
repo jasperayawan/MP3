@@ -25,7 +25,7 @@ require('../admin/essentials.php')
         <section class="heroStay">
             <div class="container">
                 <div class="heroStay_content d-flex justify-content-center align-items-center">
-                    <h1 class="text-white">Your Stay</h1>
+                    <h1 class="text-white">BOOK YOUR STAY</h1>
                 </div>
             </div>
         </section>
@@ -34,11 +34,10 @@ require('../admin/essentials.php')
             <div class=" py-md-5">
                 <div class="roomCollection_content">
                     <div class="title">
-                        <h1>Room Collection</h1>
+                        <h2 style="color:#1A5F7A"><strong>ROOM COLLECTION</strong></h2>
                     </div>
 
                     <div class="row">
-
                         <!-- <div class="col rooms p-4 d-flex flex-column justify-content-between flex-lg-row position-relative gap-4 bg-light">
                             <img src="../assets/Confortroom.jpg" alt="room 1" class="rounded-2 object-fit-cover">
                             <div class="d-flex flex-c gap-2">
@@ -192,12 +191,8 @@ require('../admin/essentials.php')
                                 </div>
                                 <div class="col-md-4">
                                     <div class="card-body rounded-0">
-                                        <h5 class="card-title" style="color:#1A5F7A">Standard Room</h5>
+                                        <h3 class="card-title" style="color:#1A5F7A"><strong>Standard Single Room</strong></h3>
                                         <ul class="navbar-nav">
-                                            <li>
-                                                <img src="../assets/pan_zoom_FILL0_wght400_GRAD0_opsz48.png" alt="rooms size" style="width:40px;">
-                                                <span>0.00 sq. m</span>
-                                            </li>
                                             <li>
                                                 <img src="../assets/group_FILL0_wght400_GRAD0_opsz48.png" alt="number of people" style="width:40px;">
                                                 <span>Good for 1 person</span>
@@ -206,8 +201,13 @@ require('../admin/essentials.php')
                                                 <img src="../assets/king_bed_FILL0_wght400_GRAD0_opsz48.png" alt="bed size" style="width:40px;">
                                                 <span>Single Bed</span>
                                             </li>
+                                            <li>
+                                                <p>
+                                                    Our Standard Single Room is for those who travel alone but want the basic comforts their budget can offer.
+                                                </p>
+                                            </li>
                                         </ul>
-                                        <a class="form-text">Includes amenities afforded to lower room types</a> <br />
+                                        <br />
                                         <a type="button" href="#" class="btn btn-primary border-0 rounded-0 mt-2" style="background-color: #1A5F7A">
                                             View Details
                                         </a>
@@ -215,10 +215,9 @@ require('../admin/essentials.php')
                                 </div>
                                 <div class="col-md-4">
                                     <div class="card-footer d-flex flex-column h-100 border-0 rounded-0" style="background-color: #E38B29; color: #fff">
-                                        <p>From</p>
-                                        <p style="text-decoration-line: line-through">Php 950.00</p>
-                                        <p>0.00/night</p>
-                                        <p>Only available with King Bed rate and availability are subject to changes.</p>
+                                        <br />
+                                        <h3>P920.00/night</h3>
+                                        <p>Availability are subject to changes.</p>
                                         <a type="button" href="#" class="btn btn-primary border-0 rounded-0" style="background-color: #1A5F7A">
                                             BOOK ROOM
                                         </a>
@@ -235,22 +234,23 @@ require('../admin/essentials.php')
                                 </div>
                                 <div class="col-md-4">
                                     <div class="card-body rounded-0">
-                                        <h5 class="card-title" style="color:#1A5F7A">Deluxe Room</h5>
+                                        <h3 class="card-title" style="color:#1A5F7A"><strong>Deluxe Room</strong></h3>
                                         <ul class="navbar-nav">
                                             <li>
-                                                <img src="../assets/pan_zoom_FILL0_wght400_GRAD0_opsz48.png" alt="rooms size" style="width:40px">
-                                                <span>0.00 sq. m</span>
-                                            </li>
-                                            <li>
                                                 <img src="../assets/group_FILL0_wght400_GRAD0_opsz48.png" alt="number of people" style="width:40px">
-                                                <span>Good for 1 person</span>
+                                                <span>Good for 2 people</span>
                                             </li>
                                             <li>
                                                 <img src="../assets/king_bed_FILL0_wght400_GRAD0_opsz48.png" alt="bed size" style="width:40px">
-                                                <span>Single Bed</span>
+                                                <span>Queen Bed</span>
+                                            </li>
+                                            <li>
+                                                <p>
+                                                    The Deluxe Room is perfect for travelling partners. The room has 1 full Queen Bed complete with all the basic amenities.
+                                                </p>
                                             </li>
                                         </ul>
-                                        <a class="form-text">Includes amenities afforded to lower room types</a> <br />
+                                        <br />
                                         <a type="button" href="#" class="btn btn-primary border-0 rounded-0 mt-2" style="background-color: #1A5F7A">
                                             View Details
                                         </a>
@@ -258,10 +258,9 @@ require('../admin/essentials.php')
                                 </div>
                                 <div class="col-md-4">
                                     <div class="card-footer d-flex flex-column h-100 border-0 rounded-0" style="background-color: #E38B29; color: #fff">
-                                        <p>From</p>
-                                        <p style="text-decoration-line: line-through">Php 950.00</p>
-                                        <p>0.00/night</p>
-                                        <p>Only available with King Bed rate and availability are subject to changes.</p>
+                                        <br />
+                                        <h3>P1,350.00/night</h3>
+                                        <p>Availability are subject to changes.</p>
                                         <a type="button" href="#" class="btn btn-primary border-0 rounded-0" style="background-color: #1A5F7A">
                                             BOOK ROOM
                                         </a>
@@ -278,22 +277,23 @@ require('../admin/essentials.php')
                                 </div>
                                 <div class="col-md-4">
                                     <div class="card-body rounded-0">
-                                        <h5 class="card-title" style="color:#1A5F7A">Double Room</h5>
+                                        <h3 class="card-title" style="color:#1A5F7A"><strong>Double Room</strong></h3>
                                         <ul class="navbar-nav">
                                             <li>
-                                                <img src="../assets/pan_zoom_FILL0_wght400_GRAD0_opsz48.png" alt="rooms size" style="width:40px">
-                                                <span>0.00 sq. m</span>
-                                            </li>
-                                            <li>
                                                 <img src="../assets/group_FILL0_wght400_GRAD0_opsz48.png" alt="number of people" style="width:40px">
-                                                <span>Good for 1 person</span>
+                                                <span>Good for 2 people</span>
                                             </li>
                                             <li>
                                                 <img src="../assets/king_bed_FILL0_wght400_GRAD0_opsz48.png" alt="bed size" style="width:40px">
-                                                <span>Single Bed</span>
+                                                <span>2 Single Beds</span>
+                                            </li>
+                                            <li>
+                                                <p>
+                                                    The Double Room is great for travelling companions/partners. Each person gets their own single bed complete with all the basic amenities we offer.
+                                                </p>
                                             </li>
                                         </ul>
-                                        <a class="form-text">Includes amenities afforded to lower room types</a> <br />
+                                        <br />
                                         <a type="button" href="#" class="btn btn-primary border-0 rounded-0 mt-2" style="background-color: #1A5F7A">
                                             View Details
                                         </a>
@@ -301,10 +301,9 @@ require('../admin/essentials.php')
                                 </div>
                                 <div class="col-md-4">
                                     <div class="card-footer d-flex flex-column h-100 border-0 rounded-0" style="background-color: #E38B29; color: #fff">
-                                        <p>From</p>
-                                        <p style="text-decoration-line: line-through">Php 950.00</p>
-                                        <p>0.00/night</p>
-                                        <p>Only available with King Bed rate and availability are subject to changes.</p>
+                                        <br />
+                                        <h3>P1,280.00/night</h3>
+                                        <p>Availability are subject to changes.</p>
                                         <a type="button" href="#" class="btn btn-primary border-0 rounded-0" style="background-color: #1A5F7A">
                                             BOOK ROOM
                                         </a>
@@ -321,22 +320,23 @@ require('../admin/essentials.php')
                                 </div>
                                 <div class="col-md-4">
                                     <div class="card-body rounded-0">
-                                        <h5 class="card-title" style="color:#1A5F7A">Premium Suite</h5>
+                                        <h3 class="card-title" style="color:#1A5F7A"><strong>Premium Suite</strong></h3>
                                         <ul class="navbar-nav">
                                             <li>
-                                                <img src="../assets/pan_zoom_FILL0_wght400_GRAD0_opsz48.png" alt="rooms size" style="width:40px">
-                                                <span>0.00 sq. m</span>
-                                            </li>
-                                            <li>
                                                 <img src="../assets/group_FILL0_wght400_GRAD0_opsz48.png" alt="number of people" style="width:40px">
-                                                <span>Good for 1 person</span>
+                                                <span>Good for 2 people</span>
                                             </li>
                                             <li>
                                                 <img src="../assets/king_bed_FILL0_wght400_GRAD0_opsz48.png" alt="bed size" style="width:40px">
-                                                <span>Single Bed</span>
+                                                <span>King Bed</span>
+                                            </li>
+                                            <li>
+                                                <p>
+                                                    This is a favorite among business travelers and those who want some extra room when they travel.
+                                                </p>
                                             </li>
                                         </ul>
-                                        <a class="form-text">Includes amenities afforded to lower room types</a> <br />
+                                        <br />
                                         <a type="button" href="#" class="btn btn-primary border-0 rounded-0 mt-2" style="background-color: #1A5F7A">
                                             View Details
                                         </a>
@@ -344,10 +344,9 @@ require('../admin/essentials.php')
                                 </div>
                                 <div class="col-md-4">
                                     <div class="card-footer d-flex flex-column h-100 border-0 rounded-0" style="background-color: #E38B29; color: #fff">
-                                        <p>From</p>
-                                        <p style="text-decoration-line: line-through">Php 950.00</p>
-                                        <p>0.00/night</p>
-                                        <p>Only available with King Bed rate and availability are subject to changes.</p>
+                                        <br />
+                                        <h3>P1,850.00/night</h3>
+                                        <p>Availability are subject to changes.</p>
                                         <a type="button" href="#" class="btn btn-primary border-0 rounded-0" style="background-color: #1A5F7A">
                                             BOOK ROOM
                                         </a>
@@ -356,26 +355,42 @@ require('../admin/essentials.php')
                             </div>
                         </div>
 
-                        <!-- room 4 -->
-                        <div class="card mb-3">
+                        <!-- room 5 -->
+                        <div class="card mb-3 rounded-0">
                             <div class="row g-0">
                                 <div class="col-md-4">
-                                    <img src="../assets/Confortroom.jpg" class="img-fluid rounded-start h-100" alt="...">
+                                    <img src="../assets/DAYBEDS.jpg" class="img-fluid rounded-0 h-100" alt="...">
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                                    <div class="card-body rounded-0">
+                                        <h3 class="card-title" style="color:#1A5F7A"><strong>Beach Day Beds</strong></h3>
+                                        <ul class="navbar-nav">
+                                            <li>
+                                                <img src="../assets/group_FILL0_wght400_GRAD0_opsz48.png" alt="number of people" style="width:40px">
+                                                <span>Good for Group</span>
+                                            </li>
+                                            <li>
+                                                <img src="../assets/king_bed_FILL0_wght400_GRAD0_opsz48.png" alt="bed size" style="width:40px">
+                                                <span>Outdoor Lounge Bed</span>
+                                            </li>
+                                            <li>
+                                                <p>
+                                                    This is perfect for a group who wants to camp-out in our beach and sleep under the stars.
+                                                </p>
+                                            </li>
+                                        </ul>
+                                        <br />
+                                        <a type="button" href="#" class="btn btn-primary border-0 rounded-0 mt-2" style="background-color: #1A5F7A">
+                                            View Details
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="card-footer d-flex flex-column h-100 border-0" style="background-color: #E38B29; color: #fff">
-                                        <p>From</p>
-                                        <p style="text-decoration-line: line-through">Php 950.00</p>
-                                        <p>0.00/night</p>
-                                        <p>Only available with King Bed rate and availability are subject to changes.</p>
-                                        <a type="button" href="#" class="btn btn-primary border-0" style="background-color: #1A5F7A">
+                                    <div class="card-footer d-flex flex-column h-100 border-0 rounded-0" style="background-color: #E38B29; color: #fff">
+                                        <br />
+                                        <h3>P400.00/night</h3>
+                                        <p>Availability are subject to changes.</p>
+                                        <a type="button" href="#" class="btn btn-primary border-0 rounded-0" style="background-color: #1A5F7A">
                                             BOOK ROOM
                                         </a>
                                     </div>
@@ -383,31 +398,49 @@ require('../admin/essentials.php')
                             </div>
                         </div>
 
-                        <div class="card mb-3">
+                        <!-- room 6 -->
+                        <div class="card mb-3 rounded-0">
                             <div class="row g-0">
                                 <div class="col-md-4">
-                                    <img src="../assets/Confortroom.jpg" class="img-fluid rounded-start h-100" alt="...">
+                                    <img src="../assets/VILLA_1.jpeg" class="img-fluid rounded-0 h-100" alt="...">
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                                    <div class="card-body rounded-0">
+                                        <h3 class="card-title" style="color:#1A5F7A"><strong>Villa</strong></h3>
+                                        <ul class="navbar-nav">
+                                            <li>
+                                                <img src="../assets/group_FILL0_wght400_GRAD0_opsz48.png" alt="number of people" style="width:40px">
+                                                <span>Good for Group</span>
+                                            </li>
+                                            <li>
+                                                <img src="../assets/king_bed_FILL0_wght400_GRAD0_opsz48.png" alt="bed size" style="width:40px">
+                                                <span>3 Double Beds</span>
+                                            </li>
+                                            <li>
+                                                <p>
+                                                    Our Villas are for families who enjoy interior comfort, with french doors and windows oriented to admit the sea breeze. 
+                                                </p>
+                                            </li>
+                                        </ul>
+                                        <br />
+                                        <a type="button" href="#" class="btn btn-primary border-0 rounded-0 mt-2" style="background-color: #1A5F7A">
+                                            View Details
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="card-footer d-flex flex-column h-100 border-0" style="background-color: #E38B29; color: #fff">
-                                        <p>From</p>
-                                        <p style="text-decoration-line: line-through">Php 950.00</p>
-                                        <p>0.00/night</p>
-                                        <p>Only available with King Bed rate and availability are subject to changes.</p>
-                                        <a type="button" href="#" class="btn btn-primary border-0" style="background-color: #1A5F7A">
-                                            Select Room
+                                    <div class="card-footer d-flex flex-column h-100 border-0 rounded-0" style="background-color: #E38B29; color: #fff">
+                                        <br />
+                                        <h3>P2,800.00/night</h3>
+                                        <p>Availability are subject to changes.</p>
+                                        <a type="button" href="#" class="btn btn-primary border-0 rounded-0" style="background-color: #1A5F7A">
+                                            BOOK ROOM
                                         </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                         </div>
                     </div>
                 </div>
@@ -418,7 +451,7 @@ require('../admin/essentials.php')
             <div class="container">
                 <div class="ourGuestSay_content d-flex flex-column gap-5 justify-content-center align-items-center">
                     <div class="titleGuest">
-                        <h1>Our Guests Say It Best</h1>
+                        <p class="title" style="letter-spacing:0.15em; font-size:20px mt-5">OUR GUESTS SAY IT BEST</p>
                     </div>
                     <div class="d-flex flex-column justify-content-center align-items-center gap-4 w-50">
                         <div class="star_ratings">
@@ -448,23 +481,11 @@ require('../admin/essentials.php')
                                 </svg>
                             </span>
                         </div>
-                        <div class="statement">
-                            <p class="text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, commodi
-                                aperiam quisquam, veritatis aut quasi, doloribus unde veniam maxime iste
-                                qui. Quasi, maiores. Amet deleniti laboriosam harum consequatur recusandae
-                                dicta cum nobis consectetur culpa. Laudantium aut ea magni quod. Atque?</p>
-                        </div>
-                        <div class="userProfile">
-                            <table>
-                                <tr class="d-flex gap-3">
-                                    <td>
-                                        <img src="../assets/capcake.jpg" alt="" width="40" height="40" class="rounded-5">
-                                    </td>
-                                    <td class="d-flex justify-content-center align-items-center">
-                                        <h2>Judith Black</h2>
-                                    </td>
-                                </tr>
-                            </table>
+                        <div class="statement text-center d-flex flex-column justify-content-center align-items-center">
+                            <h2><em>“Indulge in sophistication and unparalleled hospitality with our stylish rooms and service.”</em></h2>
+                            <p>“Experience elegance, stunning ocean views, and outstanding service at our hotel. 
+                            Our rooms are impeccably designed, the ocean views are breathtaking, and our staff will cater to your every need.”</p>
+                            <p>-Mark, on Google Review</p>
                         </div>
                     </div>
                 </div>
@@ -476,49 +497,43 @@ require('../admin/essentials.php')
         <section class="relative px-4">
             <div class="roomOffers py-4 py-md-5">
                 <div class="title_SPA w-100">
-                    <h1>Resort SPA</h1>
+                    <h2 style="color:#1A5F7A"><strong>RESORT OFFERINGS</strong></h2>
                 </div>
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 w-100">
 
                     <div class="col p-1">
-                        <div class="card h-100">
-                            <img src="../assets/Confortroom.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title title">Offer 1</h5>
-                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="card h-100 rounded-0">
+                            <img src="../assets/Confortroom.jpg" class="card-img-top rounded-0" alt="...">
+                            <div class="card-body rounded-0">
+                                <h3 class="card-title title" style="color:#1A5F7A">Camp Out</h3>
+                                <p class="card-text" style="color:#1A5F7A">Enjoy the most of our water activities with this offer and get an exclusive service when you hop to Bayanagan Island!</p>
                             </div>
-                            <div class="card-footer border-0 py-4" style="background-color: #E38B29; color: #fff">
-                                <div class="d-flex justify-content-center">
-                                    <a href="#" class="btn btn_bookNowOffers" style="background-color: #1A5F7A">Book now</a>
-                                </div>
+                            <div>
+                                <a href="#" class="btn btn_bookNowOffers rounded-0" style="background-color: #1A5F7A">BOOK NOW</a>
                             </div>
                         </div>
                     </div>
                     <div class="col p-1">
-                        <div class="card h-100">
-                            <img src="../assets/Confortroom.jpg" class="card-img-top" alt="...">
+                        <div class="card h-100 rounded-0">
+                            <img src="../assets/Confortroom.jpg" class="card-img-top rounded-0" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title title">Offer 2</h5>
-                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <h3 class="card-title title rounded-0" style="color:#1A5F7A">Flexible Rate</h3>
+                                <p class="card-text" style="color:#1A5F7A">Book with confidence and enjoy flexible cancellation up to 1 day before your stay.</p>
                             </div>
-                            <div class="card-footer border-0 py-4" style="background-color: #E38B29; color: #fff">
-                                <div class="d-flex justify-content-center">
-                                    <a href="#" class="btn btn_bookNowOffers" style="background-color: #1A5F7A">Book now</a>
-                                </div>
+                            <div>
+                                <a href="#" class="btn btn_bookNowOffers rounded-0" style="background-color: #1A5F7A">BOOK NOW</a>
                             </div>
                         </div>
                     </div>
                     <div class="col p-1">
-                        <div class="card h-100">
-                            <img src="../assets/Confortroom.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title title">Offer 3</h5>
-                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                        <div class="card h-100 rounded-0">
+                            <img src="../assets/Confortroom.jpg" class="card-img-top rounded-0" alt="...">
+                            <div class="card-body rounded-0">
+                                <h3 class="card-title title rounded-0" style="color:#1A5F7A">Rise and Dine</h3>
+                                <p class="card-text" style="color:#1A5F7A">Add a breakfast and dinner to your beach get away with meals from our Patio Bayangan!</p>
                             </div>
-                            <div class="card-footer border-0 py-4" style="background-color: #E38B29; color: #fff">
-                                <div class="d-flex justify-content-center">
-                                    <a href="#" class="btn btn_bookNowOffers" style="background-color: #1A5F7A">Book now</a>
-                                </div>
+                            <div>
+                                <a href="#" class="btn btn_bookNowOffers rounded-0" style="background-color: #1A5F7A">BOOK NOW</a>
                             </div>
                         </div>
                     </div>
