@@ -127,33 +127,7 @@
 
                 <script>
 
- function alert(type,msg,position='body')
-    {
-        let bs_class = (type == 'success') ? 'alert-success' : 'alert-danger';
-        let element = document.createElement('div');
 
-        element.innerHTML = `
-                    <div class="alert ${bs_class} alert-dismissable fade show d-flex justify-content-between align-items-center" role="alert">
-                        <strong class="me-3">${msg}</strong> 
-                        <button 
-                            type="button" 
-                            class="btn-close" 
-                            data-bs-dismiss="alert"
-                            aria-label="close">
-                        </button>
-                    </div>
-        `;
-
-        if(position == 'body'){
-            document.body.append(element);
-            element.classList.add('custom-alert');
-        }
-        else{
-            document.getElementById(position).appendChild(element)
-        }
-
-        
-    }
 
 
     let register_form = document.getElementById('register-form');
@@ -183,28 +157,28 @@
 
             xhr.onload = function() {
               if(this.responseText == 'not_matching'){
-                alert('error','Password not Matching!')
+                alert('Password not Matching!')
               }
               else if(this.responseText == 'email_already'){
-                alert('error','Email is already registered!')
+                alert('Email is already registered!')
               }
               else if(this.responseText == 'phone_already'){
-                alert('error','Phone number is already registered!')
+                alert('Phone number is already registered!')
               }
               else if(this.responseText == 'inv_img'){
-                alert('error','Only JPG, WEBP & PNG images are allowed!')
+                alert('Only JPG, WEBP & PNG images are allowed!')
               }
               else if(this.responseText == 'upd_failed'){
-                alert('error','Image upload failed!')
+                alert('Image upload failed!')
               }
               else if(this.responseText == 'mail_failed'){
-                alert('error','Cannot send confirmation email! Server down')
+                alert('Cannot send confirmation email! Server down')
               }
               else if(this.responseText == 'ins_failed'){
-                alert('error','Registration failed! Server down')
+                alert('Registration failed! Server down')
               }
               else{
-                alert('success', 'Registration success. Confirmation link sent to email!');
+                alert('Registration success. Confirmation link sent to email!');
                 register_form.reset();
               }
             }
