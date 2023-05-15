@@ -36,10 +36,17 @@
                         
                         <div class="d-flex gap-4 mx-auto">
                             <li class="nav-item"><a href="/index.php" class="nav-link text-decoration-none text-secondary fw-semibold">HOME</a></li>
+<<<<<<< HEAD
+                            <li class="nav-item"><a href="/client/yourStay.php" class="nav-link text-decoration-none text-secondary fw-semibold">STAY</a></li>
+                            <li class="nav-item"><a href="/client/zambaongaTravel.php" class="nav-link text-decoration-none text-secondary fw-semibold">VISIT US</a></li>
+                            <li class="nav-item"><a href="/client/hotelAmeneties.php" class="nav-link text-decoration-none text-secondary fw-semibold">EXPERIENCE</a></li>
+                            <li class="nav-item"><a href="/client/eventsPage.php" class="nav-link text-decoration-none text-secondary fw-semibold">EVENTS</a></li>
+=======
                             <li class="nav-item"><a href="/yourStay.php" class="nav-link text-decoration-none text-secondary fw-semibold">STAY</a></li>
                             <li class="nav-item"><a href="/hotelAmeneties.php" class="nav-link text-decoration-none text-secondary fw-semibold">EXPERIENCE</a></li>
                             <li class="nav-item"><a href="/zambaongaTravel.php" class="nav-link text-decoration-none text-secondary fw-semibold">VISIT US</a></li>
                             <li class="nav-item"><a href="/zambaongaTravel.php" class="nav-link text-decoration-none text-secondary fw-semibold">EVENTS</a></li>
+>>>>>>> d77534b396df5e4a0a6325aa21b9bf526e24710b
                           </div>
                         
                         <div class="login_buttons d-flex flex-column  flex-lg-row gap-1 justify-content-end">

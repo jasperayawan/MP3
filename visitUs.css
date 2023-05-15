@@ -20,6 +20,7 @@
 }
 .btn__book{
     background: var(--blue-bg);
+    border-radius: 0 !important
 }
 .btn__book_signup{
     border: 1px solid var(--blue-bg);
@@ -34,82 +35,19 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 .heroStay_content{
     min-height: 100vh;
 }
 
-/*--------------------- roomCollection styling------------*/
-
-.roomCollection{
-    max-width: 1000px;
-    width: 100%;
-    margin: 0 auto;
-}
-.roomCollection_content h1{
-    color: var(--blue-bg);
-}
-.btn_viewDetails{
-    background: var(--orange);
-    color: var(--pink-bg);
-    font-size: 11px;
-}
-.btn_book{
-    border: 1px solid var(--orange);
-    color: var(--orange);
-    font-size: 11px;
-}
-.room{
-    color: var(--blue-bg);
-}
-.room img{
-    height: 200px;
-}
-.roomCollection_content .title{
-    border-left: 6px solid var(--orange);
-    padding-left: .6rem;
+.heroStay_content h1{
+    font-weight: 700;
+    font-size: 80px;
+    text-shadow: 0px 10px 4px rgba(0, 0, 0, 0.5);
 }
 
+/* ----------------visit content----------------- */
 
-/*--------------------- ourGuestSay styling------------*/
-
-.ourGuestSay{
-    background: var(--blue-bg);
-    color: var(--pink-bg);
-}
-.ourGuestSay_content{
-    min-height: 100vh;
-}
-.userProfile table h2{
-    font-size: 20px;
-}
-
-
-/*---------------------  roomOffers styling------------*/
-
-.roomOffers{
-    max-width: 1000px;
-    margin: 0 auto;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.roomOffers_content{
-    min-height: 100vh;
-}
-.btn_bookNowOffers{
-    background: var(--orange);
-    color: var(--white);
-}
-.offersCard{
-    background: #F0F6F9;
-    color: var(--blue-bg);
-}
-.roomOffers_content h1{
-    border-left: 6px solid var(--orange);
-    padding-left: .6rem;
-}
 
 /*-----------------footer styling-----------------*/
 
