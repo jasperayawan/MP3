@@ -444,13 +444,8 @@ require('./admin/essentials.php')
                             </div>
                         </div> -->
 
-<<<<<<< HEAD:client/yourStay.php
-                        <!-- room 5 -->
-                        <div class="card mb-3 rounded-0">
-=======
                         <!-- room 4 -->
                         <!-- <div class="card mb-3">
->>>>>>> d77534b396df5e4a0a6325aa21b9bf526e24710b:yourStay.php
                             <div class="row g-0">
                                 <div class="col-md-4">
                                     <img src="../assets/DAYBEDS.jpg" class="img-fluid rounded-0 h-100" alt="...">
@@ -492,12 +487,7 @@ require('./admin/essentials.php')
                             </div>
                         </div> -->
 
-<<<<<<< HEAD:client/yourStay.php
-                        <!-- room 6 -->
-                        <div class="card mb-3 rounded-0">
-=======
                         <!-- <div class="card mb-3">
->>>>>>> d77534b396df5e4a0a6325aa21b9bf526e24710b:yourStay.php
                             <div class="row g-0">
                                 <div class="col-md-4">
                                     <img src="../assets/VILLA_1.jpeg" class="img-fluid rounded-0 h-100" alt="...">
@@ -537,12 +527,7 @@ require('./admin/essentials.php')
                                     </div>
                                 </div>
                             </div>
-<<<<<<< HEAD:client/yourStay.php
-                        </div>
-
-=======
                         </div> -->
->>>>>>> d77534b396df5e4a0a6325aa21b9bf526e24710b:yourStay.php
                         </div>
                     </div>
                 </div>
