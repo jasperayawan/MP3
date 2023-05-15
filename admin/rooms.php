@@ -159,7 +159,7 @@ require('../admin/script.php')
 
                                         <div class="col-md-6 mb-3">
                                             <label class="form-label fw-semibold">Area</label>
-                                            <input type="number" min="1" name="area" class="form-control shadow-none" required>
+                                            <input type="number" min="1" name="area" class="form-control shadow-none">
                                         </div>
 
                                         <div class="col-md-6 mb-3">
@@ -179,7 +179,7 @@ require('../admin/script.php')
 
                                         <div class="col-md-6 mb-3">
                                             <label class="form-label fw-semibold">Children (Max.)</label>
-                                            <input type="number" min="1" name="children" class="form-control shadow-none" required>
+                                            <input type="number" min="1" name="children" class="form-control shadow-none">
                                         </div>
                                         <div class="col-md-12 mb-3">
                                             <label class="form-label fw-semibold">Feature</label>

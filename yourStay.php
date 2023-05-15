@@ -231,22 +231,17 @@ require('./admin/essentials.php')
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="card-body rounded-0">
-                                                        <h5 class="card-title" style="color:#1A5F7A">Standard Room</h5>
+                                                        <h5 class="card-title" style="color:#1A5F7A">$room_data[name]</h5>
                                                         <ul class="navbar-nav">
                                                             <li>
-                                                                <img src="../assets/pan_zoom_FILL0_wght400_GRAD0_opsz48.png" alt="rooms size" style="width:40px;">
-                                                                <span>0.00 sq. m</span>
-                                                            </li>
-                                                            <li>
                                                                 <img src="../assets/group_FILL0_wght400_GRAD0_opsz48.png" alt="number of people" style="width:40px;">
-                                                                <span>Good for 1 person</span>
+                                                                <span>Good for $room_data[adult] people</span>
                                                             </li>
                                                             <li>
                                                                 <img src="../assets/king_bed_FILL0_wght400_GRAD0_opsz48.png" alt="bed size" style="width:40px;">
                                                                 <span>Single Bed</span>
                                                             </li>
                                                         </ul>
-                                                        <a class="form-text">Includes amenities afforded to lower room types</a> <br />
                                                         <a type="button" href="room_details.php?id=$room_data[id]" class="btn btn-primary border-0 rounded-0 mt-2" style="background-color: #1A5F7A">
                                                             View Details
                                                         </a>
@@ -254,10 +249,8 @@ require('./admin/essentials.php')
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="card-footer d-flex flex-column h-100 border-0 rounded-0" style="background-color: #E38B29; color: #fff">
-                                                        <p>From</p>
-                                                        <p style="text-decoration-line: line-through">₱$room_data[price]</p>
-                                                        <p>0.00/night</p>
-                                                        <p>Only available with King Bed rate and availability are subject to changes.</p>
+                                                        <p>₱$room_data[price]/night</p>
+                                                        <p>Availability are subject to changes.</p>
                                                         <a type="button" href="#" class="btn btn-primary border-0 rounded-0" style="background-color: #1A5F7A">
                                                             BOOK ROOM
                                                         </a>

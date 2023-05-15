@@ -173,9 +173,6 @@ require('./admin/essentials.php')
                                                 <span class="badge rounded-pill bg-light text-dark text-wrap">
                                                     $room_data[adult] Adults
                                                 </span>
-                                                <span class="badge rounded-pill bg-light text-dark text-wrap">
-                                                    $room_data[children] Children
-                                                </span>
                                             </div>
                                         guests;
 
@@ -200,14 +197,14 @@ require('./admin/essentials.php')
 
                         <div class="col-12 mt-4">
                             <div class="mb-4">
-                                <h5>Description</h5>
+                                <h5><strong>Description</strong></h5>
                                 <p>
                                     <?php echo $room_data['description'] ?>
                                 </p>
                             </div>
 
                             <div>
-                                <h5 class="mb-4 fw-bold">Reviews & ratings</h5>
+                                <h5 class="mb-4 fw-bold">Reviews & Ratings</h5>
 
                                 <div class="d-flex flex-column  gap-4">
                                     <div class="statement d-flex flex-column gap-3">
